@@ -151,28 +151,39 @@ console.log(questions[0].question)
            "Grand Theft Auto Vice City"
          ]
        }
-     
-//  const answers = (correct_answer,incorrect_answers) => {
-//     console.log(answers)
-// }
+
+
+// ESTO ES PARA SACAR EL TEXTO Y CORRECTA/INCORRECTA DE LAS RESPUESTAS
 const correctAnswer = {
   text: questionsPrueba.correct_answer,
   correct: true
-  }
+}
+console.log(correctAnswer)
+
 const incorrectAnswers = {
   text: questionsPrueba.incorrect_answers,
   correct: false
 }
 console.log(incorrectAnswers)
+// ESTO ES PARA METER TODAS LAS RESPUESTAS EN UN ARRAY
+const answers = [correctAnswer.text,...incorrectAnswers.text]
+// ESTO ES PARA RANDOMIZAR LAS RESPUESTAS, ASÍ ESE ARRAY SIEMPRE ESTÁ RANDOMIZADO Y NO SE REPITE ORDEN DE TRUE-FALSE
+const answersRandom = answers 
+    .map(value => ({value, sort: Math.random()}))
+    .sort((a,b) => a.sort - b.sort)
+    .map(({ value }) =>value)
+console.log(answers)
+console.log(answersRandom)
 
 
-// array2 = ["naranja", "rojo", "pollo", "oso"]; //4
+let unshuffled = ['hello', 'a', 't', 'q', 1, 2, 3, {cats: true}]
 
-// const combineTwoArrays = (array1, array2)=>{
-// let arrayNew = [...array1,...array2];
-// console.log(arrayNew);
-// }
-
+let shuffled = unshuffled
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
+   
+console.log(shuffled)
 
 
 // EJEMPLO CLASE PARA IR TRADUCIENDO A NUESTRA APP
