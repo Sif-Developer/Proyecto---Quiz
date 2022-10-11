@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Sif-Cano</title> 
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-    <script src="/main.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Sif/Cano</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>QUIZ</h1>
+<!-- NAVBAR -->
+    <nav>
+      <span id="homeNav">Home</span>
+      <span id="questionsNav">Questions</span>
+      <span id="resultsNav">Results</span>
+    </nav>
+
+    <div id="home">
+      <h1>Home</h1>
+    </div>
+
+    <div id="questions" class="hide">
+      <h1>Questions</h1>
+    </div>
+
+    <div id="results" class="hide">
+      <h1>Results</h1>
+    </div>
+
+<!-- QUIZ -->
+    <div id="question-container" class="hide">
+        <div class="nota"></div>
+      <div id="question">Question</div>
+
+      <div id="answer-buttons">
+      </div>
+    </div>
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="next-btn" class="hide">Next</button>
+    </div>
+
+<!-- JAVASCRIPT -->
+    <script src="/spa.js"></script>
+    <script src="/quiz.js"></script>
+  </body>
 </html>
