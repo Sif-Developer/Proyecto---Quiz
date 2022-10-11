@@ -129,7 +129,7 @@ const questions = [
   ]
 
 // pasar a PARSE las questions
-console.log(questions[0].question
+console.log(questions[0].question)
 
 
 
@@ -138,24 +138,41 @@ console.log(questions[0].question
 
 // const { name: nombre } = questionsParse;
 
- questionsPrueba = [
+ questionsPrueba = 
      {
          "category": "Entertainment: Video Games",
          "type": "multiple",
          "difficulty": "medium",
          "question": "Which one of the first four titles of the &quot;Grand Theft     Auto&quot; franchise started the series of iconic image grid cover arts?",
          "correct_answer": "Grand Theft Auto III",
-         "incorrect_answers": [
+         incorrect_answers: [
            "Grand Theft Auto",
            "Grand Theft Auto II",
            "Grand Theft Auto Vice City"
          ]
        }
-     ]
- const answers = (correct_answer,incorrect_answers) => {
-    console.log(answers)
+     
+//  const answers = (correct_answer,incorrect_answers) => {
+//     console.log(answers)
+// }
+const correctAnswer = {
+  text: questionsPrueba.correct_answer,
+  correct: true
+  }
+const incorrectAnswers = {
+  text: questionsPrueba.incorrect_answers,
+  correct: false
 }
-    
+console.log(incorrectAnswers)
+
+
+// array2 = ["naranja", "rojo", "pollo", "oso"]; //4
+
+// const combineTwoArrays = (array1, array2)=>{
+// let arrayNew = [...array1,...array2];
+// console.log(arrayNew);
+// }
+
 
 
 // EJEMPLO CLASE PARA IR TRADUCIENDO A NUESTRA APP
