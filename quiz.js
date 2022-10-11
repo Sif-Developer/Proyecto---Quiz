@@ -129,8 +129,7 @@ const questions = [
   ]
 
 // pasar a PARSE las questions
-console.log(questions[0].question)
-
+console.log(questions[0].question
 
 
 
