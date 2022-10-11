@@ -6,14 +6,38 @@ const answerButtonsElement = document.getElementById("answer-buttons");
 const notaElement = document.querySelector(".nota");
 
 let currentQuestionIndex;
-let nota = 0;
+let score = 0;
+let questionCounter = 0;
+let availableQuestions = [];
 
 // EL ARRAY DE PREGUNTAS ESTÁ EN questions.JSON
-// const questions = 
+const questions = [];
 
-// pasar a PARSE las questions - ESTO HAY QUE BORRARLO
-// console.log(questions[0].question)
 
+// pasar a PARSE las questions
+fetch("questions.json")
+  .then((res) => {
+    return res.json();
+  })
+  .then((loadedQuestions) => {
+    questions = loadedQuestions;
+    startGame();
+  })
+  .catch((err) => {    //quiere decir que si por lo que sea no se cumple lo de arriba dará un error
+    console.error(err);
+  });
+
+
+
+  startGame = () => {
+    questionCounter = 0;
+    score = 0;
+    availableQuestions = [...questions];
+    // getNewQuestion();
+    console.log(availableQuestions)
+};
+
+startGame()
 
 
 // Vamos a denominar las variables que cogemos de la base de datos de una manera concreta para programar acorde a esas variables. De esta manera si cambiamos de base de datos y han cambiado los nombres de las propiedades del objeto las cambiaríamos rápidamente.
