@@ -6,21 +6,16 @@ a {
 
 
 /* Fonts used */
-/* body {
+body {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
-} */
+} 
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Raleway', sans-serif;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 2px;
-}
-
-div {
-  cursor: default;
-
 }
 
 .buttonStyle {
@@ -95,12 +90,12 @@ h4 {
   color: var(--P1_FourthColor);
 }
 h1 {
-  /* font-size: 5.4rem; */
+   font-size: 5.4rem; 
   color: var(--P1_FirstColor);
   margin-bottom: 5rem;
 }
 h1 > span {
-  /* font-size: 2.4rem; */
+  font-size: 2.4rem; 
 }
 h2 {
   font-size: 4.2rem;
@@ -156,4 +151,3 @@ box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
 transform: translateY(-0.1rem);
 transition: transform 150ms; */
  }
- 
