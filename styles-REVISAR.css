@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
-body {
+:root { /*Aquí igual habrá que cambiarlo por BODY o la parte donde estén las preguntas /*
   /* The image used */
   background: #ffefba; /* fallback for old browsers */
   background: -webkit-linear-gradient(
