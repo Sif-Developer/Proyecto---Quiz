@@ -118,8 +118,6 @@ h3 {
     flex-direction: column;
     max-width: 80rem;
     margin: 0 auto;
-
-    
 }
 
 .buttonStyle {
@@ -128,7 +126,7 @@ background-color: var(--mainDetails-Background-color);
 border-radius: 50px;
 border-width: 0;
 box-shadow: var(--mainDetails-Shadow-color);
-cursor: pointer;
+cursor: default;
 display: inline-block;
 height: 50px;
 padding: 0 25px;
@@ -144,10 +142,4 @@ transform: scale(1.05);
 box-shadow: var(--hoverDetails-BoxShadow-color);
 transform: translateY(-0.1rem);
 transition: transform 150ms;
-cursor: default;
-
-/* cursor: pointer;
-box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-transform: translateY(-0.1rem);
-transition: transform 150ms; */
  }
