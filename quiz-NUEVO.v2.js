@@ -91,6 +91,7 @@ function selectAnswer() {
   Array.from(answerButtonsElement.children).forEach((button) => {
     //llamamos a la función y le pasamos los botons y el botón correcto
     setStatusClass(button, button.dataset.correct);
+    button.disabled = true;
   });
   if (questions.length > currentQuestionIndex + 1) {
     //si estamos en una pregunta que es menos que las preguuntas que quedan
