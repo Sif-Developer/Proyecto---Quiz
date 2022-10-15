@@ -1,4 +1,4 @@
-[
+let preguntas = [
     {
       "category": "Entertainment: Video Games",
       "type": "multiple",
