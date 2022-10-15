@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/styles.css">
   <title>Quiz Sif Cano probando</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 
@@ -15,26 +15,26 @@
       <a id="mejores-resultados"> Mejores mejores-resultados</a>
     </div>
     <div id="contador" class="contador" >
-      Tiempo: 75
+      Tiempo: 100
     </div>
   </header>
 
 
-    <section id="contenedor-start" class="empezar-quiz">
+    <section id="contenedor-empezar" class="empezar-quiz">
       <h1>BIENVENIDO AL QUIZ DE SIF Y CANO </h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
         Nostrum nihil ad rerum quam in sed at qui accusamus suscipit. Natus, 
         quos quas nulla recusandae unde iusto in totam omnis cupiditate!
       </p>
       <div class="controles">
-        <button id="empezar-btn" class="empezar-btn">
+        <button id="boton-empezar" class="boton-empezar">
           Empezar Quiz!
         </button>
       </div>
     </section>
 
 
-    <section id="contedor-preguntas" class="hide">
+    <section id="contenedor-preguntas" class="hide">
       <h1 id="pregunta-titulo">Pregunta Nº 1</h1>
       <div id="boton-respuesta" class="boton-cuadrícula">
           <button class="boton">Respuesta 1</button>
@@ -42,38 +42,37 @@
           <button class="boton">Respuesta 3</button>
           <button class="boton">Respuesta 4</button>
       </div>
-      <h2 id="chequea-pregunta" class="correcta-incorrenta hide"></h2>
+      <h2 id="chequea-respuesta" class="correcta-incorrenta hide"></h2>
       <div class="controles">
-        <button class="siguiente-btn" id="siguiente-btn hide"></button>
+        <button id="boton-siguiente" class="boton-siguiente hide"></button>
       </div>
     </section>
 
     
-    <section id="contenedor-puntuacion" class="#">
+    <section id="contenedor-puntuacion" class="hide">
       <form id="envíar-formulario">
         <h3 id="tu-puntuacion"></h3>
         <label id="nombre-puntuacion">
-          Escribe aquí tu puntuación para guardar tu puntuación
+          Escribe aquí tu nombre para guardar tu puntuación
         </label>
         <input type="text" id="campo-escribe-nombre" placeholder="Escribe tu nombre">
-        <button class="" id="enviar-nombre-boton">Envíar</button>
+        <button class="" id="boton-enviar-nombre">Envíar</button>
       </form>
     </section>
 
-    <section id="puntuaciones" class="contenedor-puntuaciones" hide>
+    <section id="puntuaciones" class="contenedor-puntuaciones hide">
       <div id="puntuaciones">
         <h1 class="tabla-puntuaciones">Tabla de puntuaciones</h1>
         <div id="puntuaciones" class="contenedor-puntuaciones-lista"></div>
 
         <div class="controles">
-          <button id="reiniciar-boton">Reiniciar Quiz</button>
-          <button id="limpiar-boton">Borrar puntuaciones</button>
+          <button id="boton-reiniciar">Reiniciar Quiz</button>
+          <button id="boton-limpiar-puntuacion">Borrar puntuaciones</button>
         </div>
 
       </div>
     </section>
 
-<script src="/js/quiz.js"></script>
-<script src="/js/preguntas.js"></script>
+<script src="/quiz.js"></script>
 </body>
 </html>
