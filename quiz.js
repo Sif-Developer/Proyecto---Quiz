@@ -31,9 +31,9 @@ botonSiguiente.addEventListener("click", () => {
 
 function marcaTiempo() {
   tiempoRestante--;
-  contadorJS.contenidoTexto = "Tiempo" + tiempoRestante;
+  contadorJS.contenidoTexto = "Tiempo: " + tiempoRestante;
   if (tiempoRestante <= 0) {
-    saveScore();
+    guardarPuntuacion();
   }
 }
 
@@ -75,7 +75,7 @@ function enseñaPregunta(question) {
   });
 }
 
-//? REINICIAR ESTADO FUNCIÓN
+//? REINICIAR ESTADO
 
 function reiniciarEstado() {
   botonSiguiente.classList.add("hide");
@@ -91,11 +91,11 @@ function seleccionaRespuesta(e) {
   let botonSeleccionado = e.target;
   let correct = botonSeleccionado.dataset.correct;
   chequeaRespuesta.classList.remove("hide");
-
+  botonSiguiente.classList.remove("hide")//? Aparece el botón next;
   if (correct) {
-    chequeaRespuesta.innerHTML = "BUENA!!, has acertado!";
+    chequeaRespuesta.innerHTML = "BUENA!! has acertado!";
   } else {
-    chequeaRespuesta.innerHTML = "MAL!!, no has acertado";
+    chequeaRespuesta.innerHTML = "MAL!! no has acertado";
   }
   if (tiempoRestante <= 10) {
     tiempoRestante = 0;
@@ -103,10 +103,9 @@ function seleccionaRespuesta(e) {
     tiempoRestante -= 10;
   }
 }
-Array.from(botonRespuesta.children).forEach((boton) => {
-  crearClaseEstado(boton, boton.dataset.correct);
+Array.from(botonRespuesta.children).forEach((button) => {
+  crearClaseEstado(button, button.dataset.correct);
 });
-
 if (randomizarPreguntas.length > indicePreguntaActual + 1) {
   botonSiguiente.classList.remove("hide");
   chequeaRespuesta.classList.remove("hide");
@@ -117,22 +116,6 @@ if (randomizarPreguntas.length > indicePreguntaActual + 1) {
 
 //? Chequea y enseña la resptesta correcta y crea la opción de que se pueden poner botones de colores
 
-// function crearClaseEstado(element, correct) {
-//   limpiarClaseEstado(element);
-//   if (correct) {
-//     element.classList.add("correct");
-//   } else {
-//     element.classList.add("wrong");
-//   }
-// }
-
-// //? BORRAR TODAS LAS CLASES
-
-// function limpiarClaseEstado(element) {
-//   element.classList.remove("correct");
-//   element.classList.remove("wrong");
-// }
-
 function crearClaseEstado(element, correct) {
   limpiarClaseEstado(element);
   if (correct) {
@@ -142,11 +125,27 @@ function crearClaseEstado(element, correct) {
   }
 }
 
-// Remove all the classes
+// //? BORRAR TODAS LAS CLASES
+
 function limpiarClaseEstado(element) {
   element.classList.remove("correct");
   element.classList.remove("wrong");
 }
+
+// function crearClaseEstado(element, correct) {
+//   limpiarClaseEstado(element);
+//   if (correct) {
+//     element.classList.add("correct");
+//   } else {
+//     element.classList.add("wrong");
+//   }
+// }
+
+// // Remove all the classes
+// function limpiarClaseEstado(element) {
+//   element.classList.remove("correct");
+//   element.classList.remove("wrong");
+// }
 
 // // //? GUARDAR PUNTUACIÓN
 
