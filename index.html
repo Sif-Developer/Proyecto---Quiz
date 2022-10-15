@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Sif Cano probando</title>
-  <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-
-  
-  <header>
-    <div>
-      <a id="mejores-resultados"> Mejores mejores-resultados</a>
-    </div>
-    <div id="contador" class="contador" >
-      Tiempo: 100
-    </div>
-  </header>
-
-
-    <section id="contenedor-empezar" class="empezar-quiz">
-      <h1>BIENVENIDO AL QUIZ DE SIF Y CANO </h1>
-      <p>Las reglas son: bla,bla,bla,bla,bla,bla
-        bla,bla,blabla,bla,blabla,bla,blabla,bla,blabla,
-        bla,bla,blabla,bla,blabla,bla,blabla,bla,blabla...
-      </p>
-      <div class="controles">
-        <button id="boton-empezar" class="boton-empezar">
-          Empezar Quiz!
-        </button>
-      </div>
-    </section>
-
-
-    <section id="contenedor-preguntas" class="hide">
-      <h1 id="pregunta-titulo">Pregunta Nº 1</h1>
-      <div id="boton-respuesta" class="boton-cuadrícula">
-          <button class="boton">Respuesta 1</button>
-          <button class="boton">Respuesta 2</button>
-          <button class="boton">Respuesta 3</button>
-          <button class="boton">Respuesta 4</button>
-      </div>
-      <h2 id="chequea-respuesta" class="correcta-incorrenta hide"></h2>
-      <div class="controles">
-        <button id="boton-siguiente" class="boton-siguiente">Next</button>
-      </div>
-    </section>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Sif/Cano</title>
+    <link rel="stylesheet" href="styles-REVISAR.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    /> -->
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <!-- <nav>
+      <span id="homeNav">Home</span>
+      <span id="questionsNav">Questions</span>
+      <span id="resultsNav">Results</span>
+    </nav> -->
+    <div class="container">
+  </head>
+  <div id="question-container" class="hide">
+    <div class="nota"></div>
+    <div id="question">Question</div>
     
-    <section id="contenedor-puntuacion" class="hide">
-      <form id="envíar-formulario">
-        <h3 id="tu-puntuacion"></h3>
-        <label id="nombre-puntuacion">
-          Escribe aquí tu nombre para guardar tu puntuación
-        </label>
-        <input type="text" id="campo-escribe-nombre" placeholder="Escribe tu nombre">
-        <button class="" id="boton-enviar-nombre">Envíar</button>
-      </form>
-    </section>
-
-    <section id="puntuaciones" class="contenedor-puntuaciones hide">
-      <div id="puntuaciones">
-        <h1 class="tabla-puntuaciones">Tabla de puntuaciones</h1>
-        <div id="puntuaciones" class="contenedor-puntuaciones-lista"></div>
-
-        <div class="controles">
-          <button id="boton-reiniciar">Reiniciar Quiz</button>
-          <button id="boton-limpiar-puntuacion">Borrar puntuaciones</button>
-        </div>
-
-      </div>
-    </section>
-
-<script src="quiz.js"></script>
-<script src="preguntas.js"></script>
-</body>
+    <div id="answer-buttons">
+    </div>
+  </div>
+  <div class="controls">
+    <button id="start-btn" class="buttonStyle">Start</button>
+    <button id="next-btn" class="hide">Next</button>
+  </div>
+</div>
+    <!-- JAVASCRIPT -->
+    <script src="/spa.js"></script>
+    <script src="/quiz-NUEVO.v2.js"></script>
+  </body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Sif/Cano</title>
+    <link rel="stylesheet" href="styles-REVISAR.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    /> -->
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <!-- <nav>
+      <span id="homeNav">Home</span>
+      <span id="questionsNav">Questions</span>
+      <span id="resultsNav">Results</span>
+    </nav> -->
+    <div class="container">
+  </head>
+  <div id="question-container" class="hide">
+    <div class="nota"></div>
+    <div id="question">Question</div>
+    
+    <div id="answer-buttons">
+    </div>
+  </div>
+  <div class="controls">
+    <button id="start-btn" class="buttonStyle">Start</button>
+    <button id="next-btn" class="hide">Next</button>
+  </div>
+</div>
+    <!-- JAVASCRIPT -->
+    <script src="/spa.js"></script>
+    <script src="/quiz-NUEVO.v2.js"></script>
+  </body>
 </html>
