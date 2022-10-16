@@ -4,7 +4,7 @@ const questionContainerElement = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const notaElement = document.querySelector(".nota");
-
+const disableButtons = document.getElementsByClassName("button")
 let currentQuestionIndex;
 let nota = 0;
 const questions = [
@@ -35,41 +35,49 @@ const questions = [
 ];
 
 function startGame() {
-  startButton.classList.replace("buttonStyle","hide");
+  startButton.classList.replace("buttonStyle", "hide");
   currentQuestionIndex = 0;
+  nota = 0;
   questionContainerElement.classList.remove("hide");
   setNextQuestion();
+
 }
 
 function showQuestion(question) {
+  notaElement.innerHTML = "Tu puntuación: " + nota;
   questionElement.innerText = question.question;
   question.answers.forEach((answer) => {
     const button = document.createElement("button");
-    button.innerText = answer.text;
+    button.classList.add("btnDisabled")
 
+    button.innerText = answer.text;
     if (answer.correct) {
       button.dataset.correct = true;
     }
     // cuando clique una respuesta llama a la función
-
     button.addEventListener("click", function () {
       console.log(button.dataset.correct);
+      disableButtons.disabled = true;
       if (button.dataset.correct == "true") {
         nota++;
+        // answerButtonsElement.children.disabled=true
         notaElement.innerHTML = "Tu puntuación: " + nota;
         console.log(nota);
       } else {
+        
         if (nota != 0) {
           nota = nota - 0.5;
           notaElement.innerHTML = "Tu puntuación: " + nota;
-        }else{
-            notaElement.innerHTML = "Tu puntuación: " + nota;
+        } else {
+          notaElement.innerHTML = "Tu puntuación: " + nota;
         }
-      }
 
+      }
+      
       selectAnswer();
     });
     answerButtonsElement.appendChild(button);
+    
   });
 }
 
@@ -83,6 +91,7 @@ function setStatusClass(element, correct) {
   if (correct) {
     element.classList.add("correct");
   } else {
+
     element.classList.add("wrong");
   }
 }
@@ -97,20 +106,16 @@ function selectAnswer() {
     //si estamos en una pregunta que es menos que las preguuntas que quedan
     //es decir si son 10 preguntas y estamos en la 7
     //se muestra el boton siguiente porque aun quedan preguntas
+
     nextButton.classList.remove("hide");
+
+    
   } else {
     //si no quedan preguntas porque hemos terminado (10/10)
     startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
-    startButton.classList.remove("hide"); // volvemos a mostrar el botón start
+    startButton.classList.replace("hide", "buttonStyle"); // volvemos a mostrar el botón start
   }
 }
-
-startButton.addEventListener("click", startGame);
-
-nextButton.addEventListener("click", () => {
-  currentQuestionIndex++;
-  setNextQuestion();
-});
 
 function resetState() {
   nextButton.classList.add("hide"); //escondemos el botón next
@@ -121,3 +126,10 @@ function resetState() {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild);
   }
 }
+
+startButton.addEventListener("click", startGame);
+
+nextButton.addEventListener("click", () => {
+  currentQuestionIndex++;
+  setNextQuestion();
+});
