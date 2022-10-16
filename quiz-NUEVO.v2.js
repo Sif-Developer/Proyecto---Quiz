@@ -4,65 +4,46 @@ const questionContainerElement = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const notaElement = document.querySelector(".nota");
-const disableButtons = document.getElementsByClassName("button")
+const disableButtons = document.getElementsByClassName("button");
 let currentQuestionIndex;
 let nota = 0;
 
-// https://the-trivia-api.com/api/questions
-
-// functionaxios
-//   .get(https://the-trivia-api.com/api/questions)
-//   .then(res=> {
-//     return res.json();
-//   })
-//   .then (loadedQuestions => {
-//     console.log(loadedQuestions.results)
-//   });
-
-
- const questions = [
-   {
-     question: "What is 2 + 2?",
-     answers: [
-       { text: "4", correct: true },
-       { text: "22", correct: false },
-     ],
-   },
-   {
-     question: "Is web development fun?",
-     answers: [
-       { text: "Kinda", correct: false },
-       { text: "YES!!!", correct: true },
-       { text: "Um no", correct: false },
-       { text: "IDK", correct: false },
-     ],
-   },
-   {
-     question: "What is 4 * 2?",
-     answers: [
-       { text: "6", correct: false },
-       { text: "8", correct: true },
-       { text: "Yes", correct: false },
-     ],
-   },
- ];
+let questions = [];
 
 function startGame() {
+  axios
+    .get(
+      "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+    )
+    .then((res) => {
+      questions = res.data.results;
+      console.log(questions);
+      setNextQuestion();
+    })
+    .catch((err) => console.error(err));
   startButton.classList.replace("buttonStyle", "hide");
   currentQuestionIndex = 0;
   nota = 0;
   questionContainerElement.classList.remove("hide");
-  setNextQuestion();
-
 }
 
 function showQuestion(question) {
   notaElement.innerHTML = "Tu puntuación: " + nota;
   questionElement.innerText = question.question;
-  question.answers.forEach((answer) => {
-    const button = document.createElement("button");
-    button.classList.add("btnDisabled")
+  let answers = [];
+  question.incorrect_answer.forEach((incorrectAnswer) =>
+    answers.push({ text: incorrectAnswer, correct: false })
+    
+  );
 
+  answers.push({ text: question.correct_answer, correct: true });
+console.log(answers)
+  answers.sort(function () {
+    return Math.random() - 0.5;
+  });
+
+  answers.map((answer) => {
+    const button = document.createElement("button");
     button.innerText = answer.text;
     if (answer.correct) {
       button.dataset.correct = true;
@@ -77,20 +58,17 @@ function showQuestion(question) {
         notaElement.innerHTML = "Tu puntuación: " + nota;
         console.log(nota);
       } else {
-        
         if (nota != 0) {
           nota = nota - 0.5;
           notaElement.innerHTML = "Tu puntuación: " + nota;
         } else {
           notaElement.innerHTML = "Tu puntuación: " + nota;
         }
-
       }
-      
+
       selectAnswer();
     });
     answerButtonsElement.appendChild(button);
-    
   });
 }
 
@@ -104,7 +82,6 @@ function setStatusClass(element, correct) {
   if (correct) {
     element.classList.add("correct");
   } else {
-
     element.classList.add("wrong");
   }
 }
@@ -121,8 +98,6 @@ function selectAnswer() {
     //se muestra el boton siguiente porque aun quedan preguntas
 
     nextButton.classList.remove("hide");
-
-    
   } else {
     //si no quedan preguntas porque hemos terminado (10/10)
     startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
@@ -139,10 +114,38 @@ function resetState() {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild);
   }
 }
-
-startButton.addEventListener("click", startGame);
-
 nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
+
+startButton.addEventListener("click", startGame);
+
+// // https://the-trivia-api.com/api/questions
+
+// const questions = [
+//   {
+//     question: "What is 2 + 2?",
+//     answers: [
+//       { text: "4", correct: true },
+//       { text: "22", correct: false },
+//       ],
+//     },
+//     {
+//       question: "Is web development fun?",
+//       answers: [
+//         { text: "Kinda", correct: false },
+//         { text: "YES!!!", correct: true },
+//         { text: "Um no", correct: false },
+//         { text: "IDK", correct: false },
+//       ],
+//     },
+//     {
+//       question: "What is 4 * 2?",
+//       answers: [
+//         { text: "6", correct: false },
+//         { text: "8", correct: true },
+//         { text: "Yes", correct: false },
+//       ],
+//     },
+//   ];
