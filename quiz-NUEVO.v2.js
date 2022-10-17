@@ -10,6 +10,14 @@ let nota = 0;
 
 let questions = [];
 
+axios
+.get(
+  "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+)
+.then((res) => {
+  questions = res.data.results;
+})
+.catch((err) => console.error(err));
 function startGame() {
   axios
     .get(
@@ -17,7 +25,6 @@ function startGame() {
     )
     .then((res) => {
       questions = res.data.results;
-      console.log(questions);
       setNextQuestion();
     })
     .catch((err) => console.error(err));
@@ -30,14 +37,15 @@ function startGame() {
 function showQuestion(question) {
   notaElement.innerHTML = "Tu puntuación: " + nota;
   questionElement.innerText = question.question;
+
   let answers = [];
-  question.incorrect_answer.forEach((incorrectAnswer) =>
-    answers.push({ text: incorrectAnswer, correct: false })
+  question.incorrect_answers.forEach((incorrectAnswer) =>{
+      answers.push({ text: incorrectAnswer, correct: false })
+  }
     
   );
 
   answers.push({ text: question.correct_answer, correct: true });
-console.log(answers)
   answers.sort(function () {
     return Math.random() - 0.5;
   });
@@ -45,6 +53,7 @@ console.log(answers)
   answers.map((answer) => {
     const button = document.createElement("button");
     button.innerText = answer.text;
+    
     if (answer.correct) {
       button.dataset.correct = true;
     }
@@ -54,7 +63,7 @@ console.log(answers)
       disableButtons.disabled = true;
       if (button.dataset.correct == "true") {
         nota++;
-        // answerButtonsElement.children.disabled=true
+        answerButtonsElement.children.disabled=true
         notaElement.innerHTML = "Tu puntuación: " + nota;
         console.log(nota);
       } else {
@@ -69,7 +78,8 @@ console.log(answers)
       selectAnswer();
     });
     answerButtonsElement.appendChild(button);
-  });
+  }
+  );
 }
 
 function setNextQuestion() {
