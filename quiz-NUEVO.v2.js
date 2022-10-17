@@ -5,19 +5,22 @@ const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const notaElement = document.querySelector(".nota");
 const disableButtons = document.getElementsByClassName("button");
+const alertMessage = document.getElementById("alertMessage")
+
 let currentQuestionIndex;
 let nota = 0;
-
 let questions = [];
+let time;
 
 axios
-.get(
-  "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
-)
-.then((res) => {
-  questions = res.data.results;
-})
-.catch((err) => console.error(err));
+  .get(
+    "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+  )
+  .then((res) => {
+    questions = res.data.results;
+  })
+  .catch((err) => console.error(err));
+
 function startGame() {
   axios
     .get(
@@ -31,19 +34,42 @@ function startGame() {
   startButton.classList.replace("buttonStyle", "hide");
   currentQuestionIndex = 0;
   nota = 0;
+
+
+  // timing /////////////////////////////////////////
+
+  time = questions.length * 10;
+  intervalID = setInterval(countdown, 1000);
+  ///////////////////////////////////////////////////
   questionContainerElement.classList.remove("hide");
 }
+
+//timing countdown ///////////////////////////////////
+
+function countdown() {
+  time--;
+  displayTime();
+  if (time <= 0) {
+    clearInterval(intervalID);
+    alertMessage.innerHTML = "Tiempo expirado";
+    endQuiz();
+  }
+}
+//timing display ///////////////////////////////////
+const timeDisplay = document.getElementById("time");
+function displayTime() {
+  timeDisplay.textContent = time;
+}
+///////////////////////////////////////////////////
 
 function showQuestion(question) {
   notaElement.innerHTML = "Tu puntuación: " + nota;
   questionElement.innerText = question.question;
 
   let answers = [];
-  question.incorrect_answers.forEach((incorrectAnswer) =>{
-      answers.push({ text: incorrectAnswer, correct: false })
-  }
-    
-  );
+  question.incorrect_answers.forEach((incorrectAnswer) => {
+    answers.push({ text: incorrectAnswer, correct: false });
+  });
 
   answers.push({ text: question.correct_answer, correct: true });
   answers.sort(function () {
@@ -53,7 +79,7 @@ function showQuestion(question) {
   answers.map((answer) => {
     const button = document.createElement("button");
     button.innerText = answer.text;
-    
+
     if (answer.correct) {
       button.dataset.correct = true;
     }
@@ -63,23 +89,25 @@ function showQuestion(question) {
       disableButtons.disabled = true;
       if (button.dataset.correct == "true") {
         nota++;
-        answerButtonsElement.children.disabled=true
+        answerButtonsElement.children.disabled = true;
         notaElement.innerHTML = "Tu puntuación: " + nota;
-        console.log(nota);
+        time = time + 5;
       } else {
         if (nota != 0) {
           nota = nota - 0.5;
           notaElement.innerHTML = "Tu puntuación: " + nota;
+          time = time - 20;
+          
         } else {
           notaElement.innerHTML = "Tu puntuación: " + nota;
+          time = time - 20;
         }
       }
-
+      
       selectAnswer();
     });
     answerButtonsElement.appendChild(button);
-  }
-  );
+  });
 }
 
 function setNextQuestion() {
@@ -102,7 +130,7 @@ function selectAnswer() {
     setStatusClass(button, button.dataset.correct);
     button.disabled = true;
   });
-  if (questions.length > currentQuestionIndex + 1) {
+  if (questions.length > currentQuestionIndex + 1 && time > 1) {
     //si estamos en una pregunta que es menos que las preguuntas que quedan
     //es decir si son 10 preguntas y estamos en la 7
     //se muestra el boton siguiente porque aun quedan preguntas
@@ -110,9 +138,13 @@ function selectAnswer() {
     nextButton.classList.remove("hide");
   } else {
     //si no quedan preguntas porque hemos terminado (10/10)
-    startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
-    startButton.classList.replace("hide", "buttonStyle"); // volvemos a mostrar el botón start
+    endQuiz;
   }
+}
+
+function endQuiz() {
+  startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
+  startButton.classList.replace("hide", "buttonStyle"); // volvemos a mostrar el botón start
 }
 
 function resetState() {
