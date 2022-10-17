@@ -38,7 +38,7 @@ function startGame() {
 
   // timing /////////////////////////////////////////
 
-  time = questions.length * 10;
+  time = questions.length * 5;
   intervalID = setInterval(countdown, 1000);
   ///////////////////////////////////////////////////
   questionContainerElement.classList.remove("hide");
@@ -58,7 +58,7 @@ function countdown() {
 //timing display ///////////////////////////////////
 const timeDisplay = document.getElementById("time");
 function displayTime() {
-  timeDisplay.textContent = time;
+  timeDisplay.textContent = time <= 0 ? 0: time;
 }
 ///////////////////////////////////////////////////
 

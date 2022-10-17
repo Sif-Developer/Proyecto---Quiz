@@ -18,16 +18,21 @@
 <body>
   <!-- NAVBAR -->
   <nav>
-    <span id="homeNav">Home</span>
-    <span id="questionsNav">Questions</span>
-    <span id="resultsNav">Results</span>
+    <span id="homeNav">Inicio</span>
+    <span id="quizNav">Quiz</span>
+    <span id="rulesNav">Reglas</span>
     <span class="timeNav" id="time"> </span>
   </nav>
 
   </head>
+  <div id="home" class="hide">  esto es la home
+  </div>
+  <div id="rules" class="hide">  aquí van las reglas: si aciertas +1 y +5 segundos <br>
+    fallas -0.5 y -20 segundos 
+  </div>
 
-
-  <div class="container">
+  <div id="quiz" class="container">
+    
     <div id="alertMessage"></div>
     <div id="start-container" class="">
       AQUI VOY A PONER LOS DATOS INICIALES <br>
@@ -51,12 +56,13 @@
     </div>
   </div>
   </div>
+  
 
 
   <!-- JAVASCRIPT -->
-  <script src="/spa.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="/quiz-NUEVO.v2.js"></script>
+  <script src="/spa.js"></script>
+  <script src="/quiz.js"></script>
 </body>
 
 </html>
