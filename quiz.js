@@ -24,9 +24,12 @@ let nota = 0;
 let questions = [];
 let time;
 
+// incorrect_answers.text.replace(/&quote/g, "");
+// correct_answers.text.replace(/&quote/g, "");
+
 axios
   .get(
-    "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+   "https://opentdb.com/api.php?amount=3&category=31&difficulty=easy&type=multiple"
   )
   .then((res) => {
     questions = res.data.results;
@@ -195,7 +198,7 @@ function selectAnswer() {
 
     // mostRecentScore(); //GUARDA EL SCORE EN LOCALSTORAGE TODAS LAS PREGUNTAS
 
-    endQuiz;
+    endQuiz();
   }
 }
 

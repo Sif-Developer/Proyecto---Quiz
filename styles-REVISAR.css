@@ -7,7 +7,10 @@ a {
 
 /* ////////ANIMATION START///////// */
 
-
+.min-height {
+  display: flex;
+  min-height: 0%;
+}
 
 #home {
 

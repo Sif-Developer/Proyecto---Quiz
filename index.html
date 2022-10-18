@@ -9,18 +9,19 @@
 </head>
 <!-- NAVBAR -->
     <nav>
-        <span id="homeNav">Inicio</span>
-        <span id="quizNav">Quiz</span>
-        <span id="rulesNav">Reglas</span>
+        <span id="rulesNav">Tiempo restante: </span>
         <span class="timeNav" id="time"> </span>
     </nav>
-
 </head>
+
+
+
 
 <body>
 
 
 <!-- Aqui va la primera parte, El home y la app que renderiza el quiz -->
+<section id="container-quiz-box" class="hide min-height">
 <section>
     <div id="container.quiz" class="hide">
       <div class="container">
@@ -43,10 +44,11 @@
     <!--fallas -0.5 y -20 segundos-->
     </div>
     <div class="nota"></div>
-    <div id="question"></div>
-    
+    <div id="question"></div>  
   </div>
 </section>
+
+
 <section>
   <div id="home" class="hide">  <!--esto es la home-->
     <div id="loadingCircle" class="loading-container">
@@ -59,11 +61,11 @@
   </div>
 </section>
 
+</section>
 
 <!--  Aquí iría la última parte donde se muestra la puntuación de la gente al presionar el botón show Highscore se mostraría -->
-<section>
-  
-    <div id= "container.score" class="container">
+  <section id = "container-score-box" class="hide min-height">
+    <div id="container.score" class="container">
       
       <div id="end" class="flex-center flex-column">
         <h3 id="final-score">0</h3>
@@ -76,13 +78,13 @@
   </section>
   
   <!-- END PAGE -->
+ <section id="container-end" class="hide min-height">
   <div id="container">
     <h3  class="flex-center flex-column">Puntuaciones</h3>
     <ol id="highscoresList"></ol>
   </div>
+</section>
 
-
-  
     <!-- JAVASCRIPT -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <!-- <script src="/spa.js"></script> -->
