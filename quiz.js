@@ -167,7 +167,7 @@ function showQuestion(question) {
   }
 
   function resetState() {
-    nextButton.classList.add("hide"); //escondemos el botón next
+    nextButton.classList.replace("auxiliarButton","hide" ); //escondemos el botón next
     while (answerButtonsElement.firstChild) {
       //bucle que se ejecuta si answerButtonsElemetnos
       //tiene un primer hijo
