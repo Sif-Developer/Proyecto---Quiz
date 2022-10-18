@@ -8,11 +8,14 @@ const notaElement = document.querySelector(".nota");
 const disableButtons = document.getElementsByClassName("button");
 const alertMessage = document.getElementById("alertMessage");
 
+<<<<<<< HEAD
 const home = document.getElementById("home");
 const loadingCircle = document.getElementById("loadingCircle")
 
 const loadingElement = document.getElementById("loadingElement");
 console.log(loadingElement);
+=======
+>>>>>>> 7930d9c (probando)
 //End Page-Ranking//
 const username = document.getElementById("username");
 const saveScoreBtn = document.getElementById("save-score");
@@ -24,25 +27,51 @@ let nota = 0;
 let questions = [];
 let time;
 
+<<<<<<< HEAD
 // incorrect_answers.text.replace(/&quote/g, "");
 // correct_answers.text.replace(/&quote/g, "");
 
 axios
   .get(
    "https://opentdb.com/api.php?amount=3&category=31&difficulty=easy&type=multiple"
+=======
+axios
+  .get(
+    "https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple"
+>>>>>>> 7930d9c (probando)
   )
   .then((res) => {
     questions = res.data.results;
   })
   .catch((err) => console.error(err));
 
+<<<<<<< HEAD
 // incorrect_answers.text.replaceAll(/&quote/g, "");
+=======
+  function startGame() {
+    axios
+      .get(
+        "https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple"
+      )
+      .then((res) => {
+        questions = res.data.results;
+        questionContainerElement.classList.remove("hide");
+        setNextQuestion();
+      })
+      .catch((err) => console.error(err));
+      startButton.classList.replace("buttonStyle", "hide");
+      username.classList.add("hide")
+      saveScoreBtn.classList.add("hide")
+    currentQuestionIndex = 0;
+    nota = 0;
+>>>>>>> 7930d9c (probando)
 
 function loadingPage () {
   
   setTimeout(goHome, 3000);
 }
 
+<<<<<<< HEAD
 function goHome () {
   loadingCircle.classList.replace("loading-container","hide")
   home.classList.add("hide")
@@ -93,6 +122,8 @@ function startGame() {
 
   // timing /////////////////////////////////////////
 
+=======
+>>>>>>> 7930d9c (probando)
   time = questions.length * 5;
   intervalID = setInterval(countdown, 1000);
   ///////////////////////////////////////////////////
@@ -154,10 +185,24 @@ function showQuestion(question) {
         if (nota != 0) {
           nota = nota - 0.5;
           notaElement.innerHTML = "Tu puntuación: " + nota;
+<<<<<<< HEAD
           time = time - 20;
         } else {
           notaElement.innerHTML = "Tu puntuación: " + nota;
           time = time - 20;
+=======
+          time = time + 5;
+        } else {
+          if (nota != 0) {
+            nota = nota - 0.5;
+            notaElement.innerHTML = "Tu puntuación: " + nota;
+            time = time - 20;
+            
+          } else {
+            notaElement.innerHTML = "Tu puntuación: " + nota;
+            time = time - 20;
+          }
+>>>>>>> 7930d9c (probando)
         }
       }
 
@@ -167,10 +212,30 @@ function showQuestion(question) {
   });
 }
 
+<<<<<<< HEAD
 function setNextQuestion() {
   resetState();
   showQuestion(questions[currentQuestionIndex]);
 }
+=======
+  function resetState() {
+    nextButton.classList.replace("auxiliarButton","hide" ); //escondemos el botón next
+    while (answerButtonsElement.firstChild) {
+      //bucle que se ejecuta si answerButtonsElemetnos
+      //tiene un primer hijo
+      //borramos el primer hijo de answerButtonsElements
+      answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
+  }
+  
+  
+  nextButton.addEventListener("click", () => {
+      currentQuestionIndex++;
+      setNextQuestion();
+    });
+    
+    startButton.addEventListener("click", startGame);
+>>>>>>> 7930d9c (probando)
 
 function setStatusClass(element, correct) {
   //pinta la respuesta corre e incorrecta
@@ -244,6 +309,7 @@ saveScoreBtn.addEventListener("click", function (e) {
 
     printInHTML();
   }
+<<<<<<< HEAD
 });
 
 const users = JSON.parse(localStorage.getItem("users")) || []; //Si existe algo en el LocalStorage creará un array nuevo y mantendrá el anterior
@@ -289,3 +355,15 @@ const loadingNumber = document.getElementById("valueLoading");
 
 
 ////////// ANIMATION START /////////
+=======
+    
+  printInHTML();
+  
+      //   const users = JSON.parse(localStorage.getItem("users")) || []; //Si existe algo en el LocalStorage creará un array nuevo y mantendrá el anterior
+        
+      //   //PrintUSers
+        
+      //   // const  highScoreList = document.getElementById("highscoresList")
+      //   // const highScores = JSON.parse(localStorage.getItem("users")) || [];
+        
+>>>>>>> 7930d9c (probando)
