@@ -1,4 +1,4 @@
-a {
+/* a {
   all: unset;
   margin-left: 15px;
 }
@@ -142,4 +142,10 @@ transform: scale(1.05);
 box-shadow: var(--hoverDetails-BoxShadow-color);
 transform: translateY(-0.1rem);
 transition: transform 150ms;
+ } 
+
+
+.flex-center {
+  display: flex;
+  justify-content: center;
  }

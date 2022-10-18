@@ -20,7 +20,10 @@
       <span id="questionsNav">Questions</span>
       <span id="resultsNav">Results</span>
     </nav> -->
-    <div class="container">
+
+    // Aqui va la primera parte, El home y la app que renderiza el quiz
+     <section>
+     <div class="container">
   </head>
   <div id="question-container" class="hide">
     <div class="nota"></div>
@@ -32,11 +35,37 @@
   <div class="controls">
     <button id="start-btn" class="buttonStyle">Start</button>
     <button id="next-btn" class="hide">Next</button>
+    <!-- MOSTRAR PAGINA DE HIGHSCORES -->
+
+    <!-- ENVIAR NOMBRE AL LOCAL STORAGE -->
+    
   </div>
 </div>
+</section> 
+
+
+<!-- // Aquí iría la última parte donde se muestra la puntuación de la gente al presionar el botón show Highscore se mostraría -->
+<section>
+  <div class="container">
+    <div id="end" class="flex-center flex-column">
+      <h3 id="final-score">0</h3>
+      <form>
+        <input type="text" id="username" maxlength="6" class="hide" placeholder="Escribe tu nombre y guárdalo">
+        <button type="submit" class="btn"  id="save-score" class="hide" >Save Score</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- END PAGE -->
+<div id="container">
+  <h3  class="flex-center flex-column">Puntuaciones</h3>
+  <ol id="highscoresList"></ol>
+</div>
+
     <!-- JAVASCRIPT -->
     <script src="/spa.js"></script>
-    <script src="/quiz-NUEVO.v2.js"></script>
+    <script src="/quiz.js"></script>
   </body>
 </html>
 <!DOCTYPE html>
@@ -53,30 +82,11 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     /> -->
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <!-- <nav>
-      <span id="homeNav">Home</span>
-      <span id="questionsNav">Questions</span>
-      <span id="resultsNav">Results</span>
-    </nav> -->
-    <div class="container">
-  </head>
-  <div id="question-container" class="hide">
-    <div class="nota"></div>
-    <div id="question">Question</div>
-    
-    <div id="answer-buttons">
-    </div>
-  </div>
-  <div class="controls">
-    <button id="start-btn" class="buttonStyle">Start</button>
-    <button id="next-btn" class="hide">Next</button>
-  </div>
-</div>
-    <!-- JAVASCRIPT -->
+
+<!-- JAVASCRIPT -->
     <script src="/spa.js"></script>
     <script src="/quiz-NUEVO.v2.js"></script>
+
+
   </body>
 </html>

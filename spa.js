@@ -1,13 +1,13 @@
-console.log("hola")
+// console.log("hola")
 
-//? DECLARAMOS LOS CONST
- const homeNav = document.querySelector("#homeNav");
- const questionsNav = document.querySelector("#questionsNav");
- const resultsNav = document.querySelector("#resultsNav");
+// //? DECLARAMOS LOS CONST
+//  const homeNav = document.querySelector("#homeNav");
+//  const questionsNav = document.querySelector("#questionsNav");
+//  const resultsNav = document.querySelector("#resultsNav");
 
- const home = document.querySelector("#home");
- const questionsElement = document.querySelector("#questions");
- const results = document.querySelector("#results");
+//  const home = document.querySelector("#home");
+//  const questionsElement = document.querySelector("#questions");
+//  const results = document.querySelector("#results");
  
 
 // const hideViews = () => {

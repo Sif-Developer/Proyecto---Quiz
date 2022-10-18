@@ -4,7 +4,7 @@ const questionContainerElement = document.getElementById("questions");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const notaElement = document.querySelector(".nota");
-
+const highScoreBtn = document.getElementById("highscore-btn")
 let currentQuestionIndex;
 let nota = 0;
 let questionCounter = 0;

@@ -5,6 +5,14 @@ const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
 const notaElement = document.querySelector(".nota");
 const disableButtons = document.getElementsByClassName("button")
+
+//End Page-Ranking//
+const username = document.getElementById("username")
+const saveScoreBtn = document.getElementById("save-score")
+const highscore = 0;
+const finalScore = document.getElementById("final-score")
+
+
 let currentQuestionIndex;
 let nota = 0;
 
@@ -49,6 +57,8 @@ let nota = 0;
 
 function startGame() {
   startButton.classList.replace("buttonStyle", "hide");
+  username.classList.add("hide")
+  saveScoreBtn.classList.add("hide")
   currentQuestionIndex = 0;
   nota = 0;
   questionContainerElement.classList.remove("hide");
@@ -69,7 +79,7 @@ function showQuestion(question) {
     }
     // cuando clique una respuesta llama a la función
     button.addEventListener("click", function () {
-      console.log(button.dataset.correct);
+
       disableButtons.disabled = true;
       if (button.dataset.correct == "true") {
         nota++;
@@ -80,11 +90,12 @@ function showQuestion(question) {
         
         if (nota != 0) {
           nota = nota - 0.5;
+           console.log(nota)
           notaElement.innerHTML = "Tu puntuación: " + nota;
         } else {
           notaElement.innerHTML = "Tu puntuación: " + nota;
         }
-
+       
       }
       
       selectAnswer();
@@ -114,6 +125,7 @@ function selectAnswer() {
     //llamamos a la función y le pasamos los botons y el botón correcto
     setStatusClass(button, button.dataset.correct);
     button.disabled = true;
+    
   });
   if (questions.length > currentQuestionIndex + 1) {
     //si estamos en una pregunta que es menos que las preguuntas que quedan
@@ -121,14 +133,31 @@ function selectAnswer() {
     //se muestra el boton siguiente porque aun quedan preguntas
 
     nextButton.classList.remove("hide");
+  
+    
 
     
   } else {
     //si no quedan preguntas porque hemos terminado (10/10)
+    
+    // mostRecentScore(); //GUARDA EL SCORE EN LOCALSTORAGE TODAS LAS PREGUNTAS
+    
+    finalScore.textContent = "Última nota: " +  nota;
+
     startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
-    startButton.classList.replace("hide", "buttonStyle"); // volvemos a mostrar el botón start
+    startButton.classList.replace("hide", "buttonStyle");
+   username.classList.remove("hide")
+    saveScoreBtn.classList.remove("hide")
+     // volvemos a mostrar el botón start
   }
 }
+
+//GUARDA EL SCORE EN LOCALSTORAGE
+// function  mostRecentScore(){  
+// let user = JSON.parse((localStorage.getItem("user"))); //Imprimo la nota en el localStorage
+// user.highscore = nota
+// localStorage.setItem("user", JSON.stringify(user));
+// }
 
 function resetState() {
   nextButton.classList.add("hide"); //escondemos el botón next
@@ -146,3 +175,44 @@ nextButton.addEventListener("click", () => {
   currentQuestionIndex++;
   setNextQuestion();
 });
+
+
+
+//SaveUsers and Score
+saveScoreBtn.addEventListener("click", function(e){
+  e.preventDefault()
+  const user = { //USER está declarado tanto arriba como abajo gracias.
+    nombre : username.value,
+    score: nota
+  }
+  users.push(user);
+  localStorage.setItem("users",JSON.stringify(users)); mostRecentScore(); 
+  
+  
+})  
+
+const users = JSON.parse(localStorage.getItem("users")) || []; //Si existe algo en el LocalStorage creará un array nuevo y mantendrá el anterior
+
+//PrintUSers
+
+const  highScoreList = document.getElementById("highscoresList")
+const highScores = JSON.parse(localStorage.getItem("users")) || [];
+
+highScoreList.innerHTML = highScores
+.map(nombre => {
+  return `<li class="high-score-result"> ${nombre.nombre} tiene una puntuación de:   ${nota.value} </li>`;
+}).join("");
+
+
+// highScoreList.innerHTML = highScores
+//   .map(nombre => {
+  //     return `<li class="high-score-result"> ${nombre.nombre} tiene una puntuación de:   ${nota.value} </li>`;
+  //   }).join("");
+  
+  
+// highScores.map(nota => {
+  //   console.log(`${nota.score}`);
+  // })               //ESTE SI DA LA NOTA
+  
+  
+  
