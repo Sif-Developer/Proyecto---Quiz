@@ -152,7 +152,7 @@ function showQuestion(question) {
         
         // mostRecentScore(); //GUARDA EL SCORE EN LOCALSTORAGE TODAS LAS PREGUNTAS
         
-        finalScore.textContent = "Última nota: " +  nota;
+        
     
         endQuiz;
     }
@@ -163,6 +163,7 @@ function showQuestion(question) {
     startButton.classList.replace("hide", "auxiliarButton"); // volvemos a mostrar el botón start
     username.classList.remove("hide")
     saveScoreBtn.classList.remove("hide")
+    finalScore.textContent = "Puntuación: "  +  nota;
   }
 
   function resetState() {
@@ -190,33 +191,36 @@ saveScoreBtn.addEventListener("click", function(e){
       nombre : username.value,
       score: nota
     }
+    {
     users.push(user);
-    localStorage.setItem("users",JSON.stringify(users)); mostRecentScore(); 
+    localStorage.setItem("users",JSON.stringify(users)); 
     
-    
+    printInHTML();
+    }
   })  
   
   const users = JSON.parse(localStorage.getItem("users")) || []; //Si existe algo en el LocalStorage creará un array nuevo y mantendrá el anterior
   
   //PrintUSers
   
-  const  highScoreList = document.getElementById("highscoresList")
-  const highScores = JSON.parse(localStorage.getItem("users")) || [];
-  
-  highScoreList.innerHTML = highScores
-  .map(nombre => {
-    return `<li class="high-score-result"> ${nombre.nombre} tiene una puntuación de:   ${nombre.score} </li>`;
-  }).join("");
-  
-  
-  // highScoreList.innerHTML = highScores
-  //   .map(nombre => {
-    //     return `<li class="high-score-result"> ${nombre.nombre} tiene una puntuación de:   ${nota.value} </li>`;
-    //   }).join("");
+ 
+  function printInHTML () {
+    const  highScoreList = document.getElementById("highscoresList")
+    const highScores = JSON.parse(localStorage.getItem("users")) 
+    highScoreList.innerHTML =  
+    highScores.map(nombre => { 
+      console.log(nombre)
+      return `<li class="high-score-result"> ${nombre.nombre} tiene una puntuación de:   ${nombre.score} </li>`;
+    }).join("");
+  }
     
-    
-  // highScores.map(nota => {
-    //   console.log(`${nota.score}`);
-    // })               //ESTE SI DA LA NOTA
-    
+  printInHTML();
+  
+      //   const users = JSON.parse(localStorage.getItem("users")) || []; //Si existe algo en el LocalStorage creará un array nuevo y mantendrá el anterior
+        
+      //   //PrintUSers
+        
+      //   // const  highScoreList = document.getElementById("highscoresList")
+      //   // const highScores = JSON.parse(localStorage.getItem("users")) || [];
+        
     
