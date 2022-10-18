@@ -9,11 +9,16 @@
 </head>
 <!-- NAVBAR -->
     <nav>
+<<<<<<< HEAD
         <span id="rulesNav">Tiempo restante: </span>
+=======
+        <span id="rulesNav" class="">Tiempo restante : </span>
+>>>>>>> 7af2741 (spa structure)
         <span class="timeNav" id="time"> </span>
     </nav>
 </head>
 
+<<<<<<< HEAD
 
 
 
@@ -23,6 +28,14 @@
 <!-- Aqui va la primera parte, El home y la app que renderiza el quiz -->
 <section id="container-quiz-box" class="hide min-height">
 <section>
+=======
+<section>
+
+
+<!-- START Y RENDER QUIZ -->
+<div class="div-spa-father">
+<section id="start-render-quiz-box" class="hide min-height">
+>>>>>>> 7af2741 (spa structure)
     <div id="container.quiz" class="hide">
       <div class="container">
         <p id="loadingElement" class="hide">  Loading... <span id="valueLoading">100</span>%</p> 
@@ -46,9 +59,19 @@
     <div class="nota"></div>
     <div id="question"></div>  
   </div>
+
+  <div id="home" class="hide">  <!--esto es la home-->
+    <div id="loadingCircle" class="loading-container">
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+   <div id="rules" class="hide">  <!-- aquí van las reglas: si aciertas +1 y +5 segundos --> <br>                                <!-- fallas -0.5 y -20 segundos -->    
+  </div>
 </section>
 
 
+<<<<<<< HEAD
 <section>
   <div id="home" class="hide">  <!--esto es la home-->
     <div id="loadingCircle" class="loading-container">
@@ -69,6 +92,10 @@
     <div id="container.score" class="container">
 =======
 <section>
+=======
+<!-- GUARDAR SCORES Y PUNTUACIÓN DEL QUIZ -->
+<section id="score-and-save-box" class="hide min-height">
+>>>>>>> 7af2741 (spa structure)
   
     <div id= "container.score" class="container">
 >>>>>>> 7930d9c (probando)
@@ -83,14 +110,24 @@
     </div>
   </section>
   
+<<<<<<< HEAD
   <!-- END PAGE -->
  <section id="container-end" class="hide min-height">
+=======
+  <!-- PUNTUACIONES -->
+  <section id="saved-scores-table-box" class="hide min-eight">
+>>>>>>> 7af2741 (spa structure)
   <div id="container">
     <h3  class="flex-center flex-column">Puntuaciones</h3>
     <ol id="highscoresList"></ol>
   </div>
+<<<<<<< HEAD
 </section>
 
+=======
+</div>
+</section>
+>>>>>>> 7af2741 (spa structure)
 
   
     <!-- JAVASCRIPT -->

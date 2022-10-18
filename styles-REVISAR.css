@@ -8,8 +8,12 @@ a {
 /* ////////ANIMATION START///////// */
 
 .min-height {
+<<<<<<< HEAD
   display: flex;
   min-height: 0%;
+=======
+  height: 0%;
+>>>>>>> 7af2741 (spa structure)
 }
 
 #home {
@@ -205,6 +209,7 @@ h3 {
   max-width: 80rem;
   margin: 0 auto;
   margin-top: 8rem;
+<<<<<<< HEAD
   min-height: 35rem;
   max-height: 35rem;
 
@@ -234,12 +239,17 @@ h3 {
     color: var(--P1_ThirdColor);
   }
 
+=======
+}
+
+>>>>>>> 7af2741 (spa structure)
 #answer-buttons {
   display: flex;
   justify-content: center;
   padding-top: 2rem;
   flex-wrap: wrap;
   
+<<<<<<< HEAD
 }
 #start-btn{
   font-size: 1.3rem;
@@ -253,6 +263,8 @@ font-size: 1.3rem;
 font-weight: 800;
 color: red;
   height: 4rem;
+=======
+>>>>>>> 7af2741 (spa structure)
 }
 
 .buttonAuxiliar {
@@ -275,6 +287,7 @@ color: red;
   box-shadow: var(--mainDetails-Shadow-color);
   cursor: default;
   width: 40%;
+<<<<<<< HEAD
   height: 3rem;
   margin: 5%;
   font-family: "Raleway", sans-serif;
@@ -285,6 +298,18 @@ color: red;
 
 
 }
+=======
+  height: 5rem;
+  margin: 5%;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.buttonStyle {
+  margin-top: 50%;
+  
+}
+>>>>>>> 7af2741 (spa structure)
 .buttonStyle:hover {
   color: var(--hoverDetails-Text-color);
 
@@ -350,4 +375,29 @@ button:hover {
 
 
 
+<<<<<<< HEAD
 
+=======
+/* LEADERBOARD PAGE
+
+.container-end {
+  background-color: var(--P1_FourthColor);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border-radius: 2rem;
+  
+}
+
+.end-title{
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+
+}
+
+.high-score-result {
+ font-size: 1.5rem;
+ font-weight: 1rem;
+} */
+>>>>>>> 7af2741 (spa structure)
