@@ -1,35 +1,34 @@
-// console.log("hola")
+//? DECLARAMOS LOS CONST
+const homeNav = document.querySelector("#homeNav");
+const quizNav = document.querySelector("#quizNav");
+const rulesNav = document.querySelector("#rulesNav");
 
-// //? DECLARAMOS LOS CONST
-//  const homeNav = document.querySelector("#homeNav");
-//  const questionsNav = document.querySelector("#questionsNav");
-//  const resultsNav = document.querySelector("#resultsNav");
+const home = document.querySelector("#home");
+const quiz = document.querySelector("#quiz");
+const rules = document.querySelector("#rules");
 
-//  const home = document.querySelector("#home");
-//  const questionsElement = document.querySelector("#questions");
-//  const results = document.querySelector("#results");
- 
+const hideViews = () => {
+ rules.classList.add("hide");
+ home.classList.add("hide");
+ quiz.classList.add("hide");
+};
+const goQuiz = () => {
+ hideViews();
+ quiz.classList.remove("hide");
+};
 
-// const hideViews = () => {
-//   results.classList.add("hide");
-//   home.classList.add("hide");
-//   questionsElement.classList.add("hide");
-//  };
-// const goQuestions = () => {
-//   hideViews();
-//   questionsElement.classList.remove("hide");
-// };
+const goHome = () => {
+   rules.classList.add("hide");
+   home.classList.add("hide");
+   quiz.classList.add("hide");
+ home.classList.remove("hide");
+};
 
-// const goHome = () => {
-//   hideViews();
-//   home.classList.remove("hide");
-// };
+const goRules = () => {
+ hideViews();
+ rules.classList.remove("hide");
+};
 
-// const goResults = () => {
-//   hideViews();
-//   results.classList.remove("hide");
-// };
-
-// questionsNav.addEventListener("click", goQuestions);
-// homeNav.addEventListener("click", goHome);
-// resultsNav.addEventListener("click", goResults);
+questionsNav.addEventListener("click", goQuiz);
+homeNav.addEventListener("click", goHome);
+rulesNav.addEventListener("click", goRules);

@@ -1,92 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Sif/Cano</title>
-    <link rel="stylesheet" href="styles-REVISAR.css" />
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    /> -->
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <!-- <nav>
-      <span id="homeNav">Home</span>
-      <span id="questionsNav">Questions</span>
-      <span id="resultsNav">Results</span>
-    </nav> -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Cano/Sif</title>
+    <link rel="stylesheet" href="/styles-REVISAR.css">
+</head>
+<!-- NAVBAR -->
+    <nav>
+        <span id="homeNav">Inicio</span>
+        <span id="quizNav">Quiz</span>
+        <span id="rulesNav">Reglas</span>
+        <span class="timeNav" id="time"> </span>
+    </nav>
 
-    // Aqui va la primera parte, El home y la app que renderiza el quiz
-     <section>
-     <div class="container">
-  </head>
-  <div id="question-container" class="hide">
-    <div class="nota"></div>
-    <div id="question">Question</div>
-    
-    <div id="answer-buttons">
-    </div>
-  </div>
-  <div class="controls">
-    <button id="start-btn" class="buttonStyle">Start</button>
-    <button id="next-btn" class="hide">Next</button>
-    <!-- MOSTRAR PAGINA DE HIGHSCORES -->
+</head>
 
-    <!-- ENVIAR NOMBRE AL LOCAL STORAGE -->
-    
-  </div>
-</div>
-</section> 
+<body>
 
-
-<!-- // Aquí iría la última parte donde se muestra la puntuación de la gente al presionar el botón show Highscore se mostraría -->
 <section>
-  <div class="container">
-    <div id="end" class="flex-center flex-column">
-      <h3 id="final-score">0</h3>
-      <form>
-        <input type="text" id="username" maxlength="6" class="hide" placeholder="Escribe tu nombre y guárdalo">
-        <button type="submit" class="btn"  id="save-score" class="hide" >Save Score</button>
-      </form>
-    </div>
-  </div>
+        <div id="home" class="hide">  <!--esto es la home-->
+        </div>
+         <div id="rules" class="hide">  <!-- aquí van las reglas: si aciertas +1 y +5 segundos --> <br> 
+                                        <!-- fallas -0.5 y -20 segundos -->    
+        </div>
 </section>
 
-<!-- END PAGE -->
-<div id="container">
-  <h3  class="flex-center flex-column">Puntuaciones</h3>
-  <ol id="highscoresList"></ol>
-</div>
+<section>
+    <div id="quiz" class="container">
+  
+    <div id="alertMessage"></div>
+    <div id="start-container" class="">
+    <!-- AQUI VOY A PONER LOS DATOS INICIALES--> <br>
+    <!--aciertas +1 y +5 segundos --> <br>
+    <!--fallas -0.5 y -20 segundos-->
+    <div class="nota"></div>
+    <div id="question"></div>
+  </div>
+</section>
+  
+<!-- Aqui va la primera parte, El home y la app que renderiza el quiz -->
+<section>
+    <div class="container">
+        <div id="question-container" class="hide">
+            <div class="nota"></div>
+            <div id="question">Question</div>
+    
+            <div id="answer-buttons"></div>
+        </div>
+    <div class="controls">
+    <button id="start-btn" class="buttonStyle">Start</button>
+    <button id="next-btn" class="hide">Next</button>
+    </div>
+    </div>
+</section>
+
+<!--  Aquí iría la última parte donde se muestra la puntuación de la gente al presionar el botón show Highscore se mostraría -->
+<section>
+    <div class="container">
+      <div id="end" class="flex-center flex-column">
+        <h3 id="final-score">0</h3>
+        <form>
+          <input type="text" id="username" maxlength="6" class="hide" placeholder="Escribe tu nombre y guárdalo">
+          <button type="submit" class="btn"  id="save-score" class="hide" >Save Score</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  
+  <!-- END PAGE -->
+  <div id="container">
+    <h3  class="flex-center flex-column">Puntuaciones</h3>
+    <ol id="highscoresList"></ol>
+  </div>
 
     <!-- JAVASCRIPT -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="/spa.js"></script>
     <script src="/quiz.js"></script>
-  </body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quiz Sif/Cano</title>
-    <link rel="stylesheet" href="styles-REVISAR.css" />
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    /> -->
+  
 
-<!-- JAVASCRIPT -->
-    <script src="/spa.js"></script>
-    <script src="/quiz-NUEVO.v2.js"></script>
-
-
-  </body>
+</body>
 </html>
