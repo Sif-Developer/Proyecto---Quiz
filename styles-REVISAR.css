@@ -1,5 +1,60 @@
 
+a {
+  all: unset;
+  margin-left: 15px;
+}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* ////////ANIMATION START///////// */
+
+
+
+#home {
+
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	min-height: 100vh;
+	font-family: 'Lato', sans-serif;
+	margin: 0;
+}
+
+.loading-container {
+	animation: rotate 3s linear infinite;
+	height: 2rem;
+	transform-origin: bottom center;
+}
+
+@keyframes rotate {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.circle {
+	animation: grow 1.5s linear infinite;
+	background-color: var(--P1_FifthColor);
+	border-radius: 50%;
+	display: inline-block;
+	margin: -10px;
+	height: 40px;
+	width: 40px;
+	transform: scale(0);
+}
+
+.circle:nth-of-type(2) {
+	animation-delay: .75s;
+	background-color: var(--P1_SecondColor);
+}
+
+@keyframes grow {
+	50% {
+		transform: scale(1);
+	}
+}
 
 
 
@@ -24,12 +79,6 @@
 
 
 
-
-a {
-  all: unset;
-  margin-left: 15px;
-}
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 /* Fonts used */
 body {
@@ -141,9 +190,7 @@ h3 {
 
 /* Utilities */
 .container {
-  background-color: grey;
-  border-color: #fefdf8;
-  border-style: solid;
+  background-color: var(--P1_FirstColor);
   border-radius: 1.7rem;
   width: 70vw;
   height: 50vh;
@@ -154,6 +201,7 @@ h3 {
   flex-direction: column;
   max-width: 80rem;
   margin: 0 auto;
+  margin-top: 8rem;
 }
 
 #answer-buttons {
@@ -161,6 +209,7 @@ h3 {
   justify-content: center;
   padding-top: 2rem;
   flex-wrap: wrap;
+  
 }
 
 .buttonAuxiliar {
@@ -183,15 +232,16 @@ h3 {
   box-shadow: var(--mainDetails-Shadow-color);
   cursor: default;
   width: 40%;
+  height: 5rem;
   margin: 5%;
-  /* display: inline-block;
-  align-items: center;
-  height: 50px; 
-  padding: 0 25px;
-  transition: all 200ms;
-   margin: 2rem; */
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
 }
-
+.buttonStyle {
+  margin-top: 50%;
+  
+}
 .buttonStyle:hover {
   color: var(--hoverDetails-Text-color);
 
@@ -257,4 +307,4 @@ button:hover {
 
 
 
-/* ////////SCORE///////// */
+

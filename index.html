@@ -19,16 +19,10 @@
 
 <body>
 
-<section>
-        <div id="home" class="hide">  <!--esto es la home-->
-        </div>
-         <div id="rules" class="hide">  <!-- aquí van las reglas: si aciertas +1 y +5 segundos --> <br> 
-                                        <!-- fallas -0.5 y -20 segundos -->    
-        </div>
-</section>
+
 <!-- Aqui va la primera parte, El home y la app que renderiza el quiz -->
 <section>
-    <div id="container.quiz" class="container">
+    <div id="container.quiz" class="hide">
       <div class="container">
         <p id="loadingElement" class="hide">  Loading... <span id="valueLoading">100</span>%</p> 
         <div id="question-container" class="hide">
@@ -50,7 +44,17 @@
     <div id="question"></div>
   </div>
 </section>
-  
+<section>
+  <div id="home" class="hide">  <!--esto es la home-->
+    <div id="loadingCircle" class="loading-container">
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </div>
+   <div id="rules" class="hide">  <!-- aquí van las reglas: si aciertas +1 y +5 segundos --> <br> 
+                                  <!-- fallas -0.5 y -20 segundos -->    
+  </div>
+</section>
 
 
 <!--  Aquí iría la última parte donde se muestra la puntuación de la gente al presionar el botón show Highscore se mostraría -->
@@ -78,7 +82,7 @@
   
     <!-- JAVASCRIPT -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="/spa.js"></script>
+    <!-- <script src="/spa.js"></script> -->
     <script src="/quiz.js"></script>
   
 
