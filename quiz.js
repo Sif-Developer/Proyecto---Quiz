@@ -145,7 +145,7 @@ function showQuestion(question) {
       //es decir si son 10 preguntas y estamos en la 7
       //se muestra el boton siguiente porque aun quedan preguntas
   
-      nextButton.classList.remove("hide");
+      nextButton.classList.replace("hide", "buttonAuxiliar");
     
     } else {
         //si no quedan preguntas porque hemos terminado (10/10)
@@ -154,17 +154,15 @@ function showQuestion(question) {
         
         finalScore.textContent = "Última nota: " +  nota;
     
-        startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
-        startButton.classList.replace("hide", "buttonStyle");
-       username.classList.remove("hide")
-        saveScoreBtn.classList.remove("hide")
         endQuiz;
     }
   }
   
   function endQuiz() {
     startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
-    startButton.classList.replace("hide", "buttonStyle"); // volvemos a mostrar el botón start
+    startButton.classList.replace("hide", "auxiliarButton"); // volvemos a mostrar el botón start
+    username.classList.remove("hide")
+    saveScoreBtn.classList.remove("hide")
   }
 
   function resetState() {
@@ -207,7 +205,7 @@ saveScoreBtn.addEventListener("click", function(e){
   
   highScoreList.innerHTML = highScores
   .map(nombre => {
-    return `<li class="high-score-result"> ${nombre.nombre} tiene una puntuación de:   ${nota.value} </li>`;
+    return `<li class="high-score-result"> ${nombre.nombre} tiene una puntuación de:   ${nombre.score} </li>`;
   }).join("");
   
   

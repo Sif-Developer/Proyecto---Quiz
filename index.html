@@ -26,10 +26,21 @@
                                         <!-- fallas -0.5 y -20 segundos -->    
         </div>
 </section>
-
+<!-- Aqui va la primera parte, El home y la app que renderiza el quiz -->
 <section>
-    <div id="quiz" class="container">
-  
+    <div id="container.quiz" class="container">
+      <div class="container">
+        
+        <div id="question-container" class="hide">
+            <div class="nota"></div>
+            <div id="question">Question</div>
+    
+            <div id="answer-buttons" class = "buttonStyleAnswer"></div>
+        </div>
+    <div class="controls">
+    <button id="start-btn" class="buttonStyle">Start</button>
+    <button id="next-btn" class="hide">Next</button>
+
     <div id="alertMessage"></div>
     <div id="start-container" class="">
     <!-- AQUI VOY A PONER LOS DATOS INICIALES--> <br>
@@ -40,25 +51,11 @@
   </div>
 </section>
   
-<!-- Aqui va la primera parte, El home y la app que renderiza el quiz -->
-<section>
-    <div class="container">
-        <div id="question-container" class="hide">
-            <div class="nota"></div>
-            <div id="question">Question</div>
-    
-            <div id="answer-buttons"></div>
-        </div>
-    <div class="controls">
-    <button id="start-btn" class="buttonStyle">Start</button>
-    <button id="next-btn" class="hide">Next</button>
-    </div>
-    </div>
-</section>
+
 
 <!--  Aquí iría la última parte donde se muestra la puntuación de la gente al presionar el botón show Highscore se mostraría -->
 <section>
-    <div class="container">
+    <div id= "container.score" class="container">
       <div id="end" class="flex-center flex-column">
         <h3 id="final-score">0</h3>
         <form>
