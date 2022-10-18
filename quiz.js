@@ -114,6 +114,7 @@ function showQuestion(question) {
     answers.map((answer) => {
       const button = document.createElement("button");
       button.innerText = answer.text;
+      button.classList.add("buttonStyleAnswer")
   
       if (answer.correct) {
         button.dataset.correct = true;
@@ -142,6 +143,7 @@ function showQuestion(question) {
         selectAnswer();
       });
       answerButtonsElement.appendChild(button);
+
     });
   }
 
