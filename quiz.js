@@ -7,6 +7,8 @@ const notaElement = document.querySelector(".nota");
 const disableButtons = document.getElementsByClassName("button");
 const alertMessage = document.getElementById("alertMessage")
 
+const loadingElement = document.getElementById("loadingElement")
+console.log(loadingElement)
 //End Page-Ranking//
 const username = document.getElementById("username")
 const saveScoreBtn = document.getElementById("save-score")
@@ -18,6 +20,8 @@ let nota = 0;
 let questions = [];
 let time;
 
+
+
 axios
   .get(
     "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
@@ -27,7 +31,25 @@ axios
   })
   .catch((err) => console.error(err));
 
+
+  
+function loadingStartGame() {
+  axios
+  .get(
+    "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
+  )
+  .then((res) => {
+    questions = res.data.results;
+  })
+  .catch((err) => console.error(err));
+  questionContainerElement.classList.add("hide") // Esto es para que se oculten las preguntas cuando Restart
+    loadingElement.classList.replace("hide","loading")
+    startButton.classList.replace("buttonStyle","hide")
+    setTimeout(startGame, 1000)
+  }
+
   function startGame() {
+   loadingElement.classList.replace("loading","hide")
     axios
       .get(
         "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
@@ -182,7 +204,7 @@ function showQuestion(question) {
       setNextQuestion();
     });
     
-    startButton.addEventListener("click", startGame);
+    startButton.addEventListener("click", loadingStartGame);
 
     //SaveUsers and Score
 saveScoreBtn.addEventListener("click", function(e){
