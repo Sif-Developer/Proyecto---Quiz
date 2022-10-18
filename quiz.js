@@ -22,6 +22,7 @@ let time;
 
 
 
+
 axios
   .get(
     "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
@@ -31,6 +32,7 @@ axios
   })
   .catch((err) => console.error(err));
 
+  // incorrect_answers.text.replaceAll(/&quote/g, "");
 
   
 function loadingStartGame() {
@@ -45,6 +47,8 @@ function loadingStartGame() {
   questionContainerElement.classList.add("hide") // Esto es para que se oculten las preguntas cuando Restart
     loadingElement.classList.replace("hide","loading")
     startButton.classList.replace("buttonStyle","hide")
+    nextButton.classList.replace("buttonAuxiliar","hide"); 
+    alertMessage.classList.add("hide");
     setTimeout(startGame, 1000)
   }
 
@@ -82,6 +86,7 @@ function countdown() {
   if (time <= 0) {
     clearInterval(intervalID);
     alertMessage.innerHTML = "Tiempo expirado";
+    alertMessage.classList.remove("hide");
     endQuiz();
   }
 }
@@ -182,14 +187,16 @@ function showQuestion(question) {
   
   function endQuiz() {
     startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
-    startButton.classList.replace("hide", "auxiliarButton"); // volvemos a mostrar el botón start
+    startButton.classList.replace("hide", "buttonStyle"); // volvemos a mostrar el botón start
+    nextButton.classList.replace("buttonAuxiliar","hide"); 
+
     username.classList.remove("hide")
     saveScoreBtn.classList.remove("hide")
     finalScore.textContent = "Puntuación: "  +  nota;
   }
 
   function resetState() {
-    nextButton.classList.replace("auxiliarButton","hide" ); //escondemos el botón next
+    nextButton.classList.replace("buttonAuxiliar","hide" ); //escondemos el botón next
     while (answerButtonsElement.firstChild) {
       //bucle que se ejecuta si answerButtonsElemetnos
       //tiene un primer hijo
