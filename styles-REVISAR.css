@@ -144,6 +144,7 @@ h3 {
   background-color: grey;
   border-color: #fefdf8;
   border-style: solid;
+  border-radius: 1.7rem;
   width: 70vw;
   height: 50vh;
   display: flex;
@@ -253,3 +254,7 @@ button:hover {
 	/*動畫播放次數*/
    animation-iteration-count: infinite; 
 }
+
+
+
+/* ////////SCORE///////// */

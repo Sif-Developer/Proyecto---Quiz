@@ -49,7 +49,10 @@ function loadingStartGame() {
     startButton.classList.replace("buttonStyle","hide")
     nextButton.classList.replace("buttonAuxiliar","hide"); 
     alertMessage.classList.add("hide");
-    setTimeout(startGame, 1000)
+    animateValue();
+    setTimeout(startGame, 3000)
+
+    
   }
 
   function startGame() {
@@ -254,4 +257,20 @@ saveScoreBtn.addEventListener("click", function(e){
       //   // const  highScoreList = document.getElementById("highscoresList")
       //   // const highScores = JSON.parse(localStorage.getItem("users")) || [];
         
-    
+      function animateValue(loadingNumber, start, end, duration) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          loadingNumber.innerHTML = Math.floor(progress * (end - start) + start);
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+        
+      }
+      
+      const loadingNumber = document.getElementById("valueLoading");
+      animateValue(loadingNumber, 0, 100, 2500);
+      animateValue()
