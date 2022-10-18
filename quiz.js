@@ -60,6 +60,7 @@ function loadingStartGame() {
     .catch((err) => console.error(err));
     animateValue(loadingNumber, 0, 100, 4000);
   questionContainerElement.classList.add("hide"); // Esto es para que se oculten las preguntas cuando Restart
+ questionElement.classList.add("hide");
   loadingElement.classList.replace("hide", "loading");
   startButton.classList.replace("buttonStyle", "hide");
   nextButton.classList.replace("buttonAuxiliar", "hide");
@@ -77,6 +78,7 @@ function startGame() {
     .then((res) => {
       questions = res.data.results;
       questionContainerElement.classList.remove("hide");
+      questionElement.classList.remove("hide");
       setNextQuestion();
     })
     .catch((err) => console.error(err));
@@ -114,6 +116,7 @@ function displayTime() {
 ///////////////////////////////////////////////////
 
 function showQuestion(question) {
+
   notaElement.innerHTML = "Tu puntuación: " + nota;
   questionElement.innerText = question.question;
 
@@ -197,6 +200,7 @@ function selectAnswer() {
 }
 
 function endQuiz() {
+  questionContainerElement.classList.add("hide");
   startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
   startButton.classList.replace("hide", "buttonStyle"); // volvemos a mostrar el botón start
   nextButton.classList.replace("buttonAuxiliar", "hide");
