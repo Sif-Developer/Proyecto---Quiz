@@ -153,7 +153,7 @@ function showQuestion(question) {
         // mostRecentScore(); //GUARDA EL SCORE EN LOCALSTORAGE TODAS LAS PREGUNTAS
         
         finalScore.textContent = "Última nota: " +  nota;
-    
+        
         endQuiz;
     }
   }
@@ -163,10 +163,11 @@ function showQuestion(question) {
     startButton.classList.replace("hide", "auxiliarButton"); // volvemos a mostrar el botón start
     username.classList.remove("hide")
     saveScoreBtn.classList.remove("hide")
+    nextButton.classList.replace("buttonAuxiliar", "hide")
   }
 
   function resetState() {
-    nextButton.classList.add("hide"); //escondemos el botón next
+    nextButton.classList.replace("auxiliarButton","hide" ); //escondemos el botón next
     while (answerButtonsElement.firstChild) {
       //bucle que se ejecuta si answerButtonsElemetnos
       //tiene un primer hijo
