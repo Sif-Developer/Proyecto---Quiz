@@ -9,15 +9,10 @@
 </head>
 <!-- NAVBAR -->
     <nav>
-
         <span id="rulesNav">Tiempo restante: </span>
-
-        <span id="rulesNav" class="">Tiempo restante : </span>
-
         <span class="timeNav" id="time"> </span>
     </nav>
 </head>
-
 
 
 
@@ -26,23 +21,8 @@
 
 
 <!-- Aqui va la primera parte, El home y la app que renderiza el quiz -->
-<section id="container-quiz-box" class="hide min-height">
+<section id="container-quiz-box" class="">
 <section>
-
-<section>
-
-
-<body>
-
-
-<!-- START Y RENDER QUIZ -->
-
-<div class="div-spa-father">
-
-<section id="start-render-quiz-box" class="hide min-height">
-
-<section id="start-render-quiz-box" class="">
-
     <div id="container.quiz" class="hide">
       <div class="container">
         <p id="loadingElement" class="hide">  Loading... <span id="valueLoading">100</span>%</p> 
@@ -66,17 +46,7 @@
     <div class="nota"></div>
     <div id="question"></div>  
   </div>
-
-  <div id="home" class="hide">  <!--esto es la home-->
-    <div id="loadingCircle" class="loading-container">
-      <div class="circle"></div>
-      <div class="circle"></div>
-    </div>
-  </div>
-   <div id="rules" class="hide">  <!-- aquí van las reglas: si aciertas +1 y +5 segundos --> <br>                                <!-- fallas -0.5 y -20 segundos -->    
-  </div>
 </section>
-
 
 
 <section>
@@ -94,54 +64,33 @@
 </section>
 
 <!--  Aquí iría la última parte donde se muestra la puntuación de la gente al presionar el botón show Highscore se mostraría -->
-
   <section id = "container-score-box" class="hide min-height">
     <div id="container.score" class="container">
-
-<section>
-
-<!-- GUARDAR SCORES Y PUNTUACIÓN DEL QUIZ -->
-<section id="score-and-save-box" class="hide min-height">
-
-  
-    <div id= "container.score" class="container">
-
       
       <div id="end" class="flex-center flex-column">
-        <h3 id="final-score">0</h3>
+        <h3 id="final-score">0</h3><br>
         <form>
-          <input type="text" id="username" maxlength="6" class="hide" placeholder="Escribe tu nombre y guárdalo">
+          <input type="text" id="username" maxlength="6" class="hide" placeholder="Escribe tu nombre">
           <button type="submit" class="btn"  id="save-score" class="hide" >Save Score</button>
         </form>
       </div>
     </div>
   </section>
   
-
   <!-- END PAGE -->
  <section id="container-end" class="hide min-height">
-
-  <!-- PUNTUACIONES -->
-
-  <section id="saved-scores-table-box" class="hide min-eight">
-
-
-  <section id="saved-scores-table-box" class=" min-eight">
-
   <div id="container">
-    <h3  class="flex-center flex-column">Puntuaciones</h3>
-    <ol id="highscoresList"></ol>
+    <h3  class="flex-center flex-column">Últimos resultados</h3>
+    <ul id="highscoresList"></ul>
   </div>
-
+  <button id="restart-end-page" class="">Restart Quiz</button>
 </section>
 
-
-</div>
-</section>
 
   
     <!-- JAVASCRIPT -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="/spa.js"></script> -->
     <script src="/quiz.js"></script>
   
 

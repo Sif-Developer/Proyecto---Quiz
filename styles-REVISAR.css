@@ -7,16 +7,10 @@ a {
 
 /* ////////ANIMATION START///////// */
 
-
 .min-height {
-<<<<<<< HEAD
   display: flex;
   min-height: 0%;
-=======
-  height: 0%;
->>>>>>> 7af2741 (spa structure)
 }
-
 
 #home {
 
@@ -65,7 +59,23 @@ a {
 	}
 }
 
-
+#username {
+  padding: 8px;
+  font-size: 16px;
+  border-width: 1px;
+  background-color: #ffffff;
+  color: #000000;
+  border-style: solid;
+  border-radius: 15px;
+  box-shadow: 4px 5px 6px rgba(66,66,66,.38);
+  text-shadow: 0px 0px 5px rgba(66,66,66,.75);
+  display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: flex-end;
+	align-content: center;
+}
 
 
 
@@ -211,14 +221,8 @@ h3 {
   max-width: 80rem;
   margin: 0 auto;
   margin-top: 8rem;
-<<<<<<< HEAD
-<<<<<<< HEAD
   min-height: 35rem;
   max-height: 35rem;
-=======
-  min-height: 35rem;
-  
->>>>>>> c80826d (problema container height)
 
 }
 
@@ -231,14 +235,8 @@ h3 {
 #question-container {
   display: flex;
   flex-direction: column;
-<<<<<<< HEAD
   flex-wrap: wrap;
   margin-top: 10rem;
-=======
-  min-height: 100vh;
-  flex-wrap: wrap;
-  margin-top: 1rem;
->>>>>>> c80826d (problema container height)
   margin: 5%;
   }
 
@@ -252,48 +250,12 @@ h3 {
     color: var(--P1_ThirdColor);
   }
 
-<<<<<<< HEAD
-=======
-}
-
->>>>>>> 7af2741 (spa structure)
-=======
->>>>>>> c80826d (problema container height)
 #answer-buttons {
   display: flex;
   justify-content: center;
   padding-top: 2rem;
   flex-wrap: wrap;
   
-<<<<<<< HEAD
-}
-#start-btn{
-  font-size: 1.3rem;
-  height: 4rem;
-}
-
-#alertMessage{
-display: flex;
-justify-content: center;
-font-size: 1.3rem;
-font-weight: 800;
-color: red;
-  height: 4rem;
-=======
->>>>>>> 7af2741 (spa structure)
-}
-#start-btn{
-  font-size: 1.3rem;
-  height: 4rem;
-}
-
-#alertMessage{
-display: flex;
-justify-content: center;
-font-size: 1.3rem;
-font-weight: 800;
-color: red;
-  height: 4rem;
 }
 
 .buttonAuxiliar {
@@ -316,33 +278,16 @@ color: red;
   box-shadow: var(--mainDetails-Shadow-color);
   cursor: default;
   width: 40%;
-<<<<<<< HEAD
-<<<<<<< HEAD
-  height: 3rem;
-  margin: 5%;
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
-}
-.buttonStyle {
-
-
-}
-=======
   height: 5rem;
-=======
-  height: 3rem;
->>>>>>> c80826d (problema container height)
   margin: 5%;
   font-family: "Raleway", sans-serif;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 .buttonStyle {
-
-
+  margin-top: 50%;
+  
 }
->>>>>>> 7af2741 (spa structure)
 .buttonStyle:hover {
   color: var(--hoverDetails-Text-color);
 
@@ -405,13 +350,9 @@ button:hover {
 	/*動畫播放次數*/
    animation-iteration-count: infinite; 
 }
-<<<<<<< HEAD
 
 
 
-<<<<<<< HEAD
-
-=======
 /* LEADERBOARD PAGE
 
 .container-end {
@@ -434,6 +375,3 @@ button:hover {
  font-size: 1.5rem;
  font-weight: 1rem;
 } */
->>>>>>> 7af2741 (spa structure)
-=======
->>>>>>> c80826d (problema container height)

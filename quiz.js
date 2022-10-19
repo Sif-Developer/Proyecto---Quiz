@@ -8,20 +8,11 @@ const notaElement = document.querySelector(".nota");
 const disableButtons = document.getElementsByClassName("button");
 const alertMessage = document.getElementById("alertMessage");
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7af2741 (spa structure)
 const home = document.getElementById("home");
-const loadingCircle = document.getElementById("loadingCircle")
+const loadingCircle = document.getElementById("loadingCircle");
 
 const loadingElement = document.getElementById("loadingElement");
 console.log(loadingElement);
-<<<<<<< HEAD
-=======
->>>>>>> 7930d9c (probando)
-=======
->>>>>>> 7af2741 (spa structure)
 //End Page-Ranking//
 const username = document.getElementById("username");
 const saveScoreBtn = document.getElementById("save-score");
@@ -33,120 +24,39 @@ let nota = 0;
 let questions = [];
 let time;
 
-<<<<<<< HEAD
+//MOSTRAR PAGINAS
+
+const showStartAndQuiz = document.getElementById("container-quiz-box");
+const showSaveScoreBox = document.getElementById("container-score-box");
+const showEndPage = document.getElementById("container-end");
+
+const restartEndPageBtn = document.getElementById("restart-end-page");
+
 // incorrect_answers.text.replace(/&quote/g, "");
 // correct_answers.text.replace(/&quote/g, "");
 
 axios
   .get(
-   "https://opentdb.com/api.php?amount=3&category=31&difficulty=easy&type=multiple"
-=======
-axios
-  .get(
-<<<<<<< HEAD
-    "https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple"
->>>>>>> 7930d9c (probando)
-=======
-    "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
->>>>>>> 7af2741 (spa structure)
+    "https://opentdb.com/api.php?amount=3&category=31&difficulty=easy&type=multiple"
   )
   .then((res) => {
     questions = res.data.results;
   })
   .catch((err) => console.error(err));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 // incorrect_answers.text.replaceAll(/&quote/g, "");
-=======
-  function startGame() {
-    axios
-      .get(
-        "https://opentdb.com/api.php?amount=10&category=23&difficulty=easy&type=multiple"
-      )
-      .then((res) => {
-        questions = res.data.results;
-        questionContainerElement.classList.remove("hide");
-        setNextQuestion();
-      })
-      .catch((err) => console.error(err));
-      startButton.classList.replace("buttonStyle", "hide");
-      username.classList.add("hide")
-      saveScoreBtn.classList.add("hide")
-    currentQuestionIndex = 0;
-    nota = 0;
->>>>>>> 7930d9c (probando)
-=======
-// incorrect_answers.text.replaceAll(/&quote/g, "");
->>>>>>> 7af2741 (spa structure)
 
-function loadingPage () {
-  
+function loadingPage() {
   setTimeout(goHome, 3000);
 }
-<<<<<<< HEAD
-=======
 
-function goHome () {
-  loadingCircle.classList.replace("loading-container","hide")
-  home.classList.add("hide")
-  container
-  questionContainerGeneral.classList.remove("hide")
- }
-loadingPage();
- 
-
-function loadingStartGame() {
-  axios
-    .get(
-      "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
-    )
-    .then((res) => {
-      questions = res.data.results;
-    })
-    .catch((err) => console.error(err));
-    animateValue(loadingNumber, 0, 100, 4000);
-  questionContainerElement.classList.add("hide"); // Esto es para que se oculten las preguntas cuando Restart
- questionElement.classList.add("hide");
-  loadingElement.classList.replace("hide", "loading");
-  startButton.classList.replace("buttonStyle", "hide");
-  nextButton.classList.replace("buttonAuxiliar", "hide");
-  alertMessage.classList.add("hide");
-  animateValue();
-  setTimeout(startGame, 3000);
+function goHome() {
+  loadingCircle.classList.replace("loading-container", "hide");
+  home.classList.add("hide");
+  container;
+  questionContainerGeneral.classList.remove("hide");
 }
-
-function startGame() {
-  loadingElement.classList.replace("loading", "hide");
-  axios
-    .get(
-      "https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple"
-    )
-    .then((res) => {
-      questions = res.data.results;
-      questionContainerElement.classList.remove("hide");
-      questionElement.classList.remove("hide");
-      setNextQuestion();
-    })
-    .catch((err) => console.error(err));
-  startButton.classList.replace("buttonStyle", "hide");
-  username.classList.add("hide");
-  saveScoreBtn.classList.add("hide");
-  currentQuestionIndex = 0;
-  nota = 0;
-
-  // timing /////////////////////////////////////////
->>>>>>> 7af2741 (spa structure)
-
-<<<<<<< HEAD
-function goHome () {
-  loadingCircle.classList.replace("loading-container","hide")
-  home.classList.add("hide")
-  container
-  questionContainerGeneral.classList.remove("hide")
- }
 loadingPage();
- 
 
 function loadingStartGame() {
   axios
@@ -157,13 +67,17 @@ function loadingStartGame() {
       questions = res.data.results;
     })
     .catch((err) => console.error(err));
-    animateValue(loadingNumber, 0, 100, 4000);
+  animateValue(loadingNumber, 0, 100, 4000);
   questionContainerElement.classList.add("hide"); // Esto es para que se oculten las preguntas cuando Restart
- questionElement.classList.add("hide");
+  questionElement.classList.add("hide");
   loadingElement.classList.replace("hide", "loading");
   startButton.classList.replace("buttonStyle", "hide");
   nextButton.classList.replace("buttonAuxiliar", "hide");
   alertMessage.classList.add("hide");
+
+  showEndPage.classList.add("hide");
+  showStartAndQuiz.classList.remove("hide");
+
   animateValue();
   setTimeout(startGame, 3000);
 }
@@ -189,8 +103,6 @@ function startGame() {
 
   // timing /////////////////////////////////////////
 
-=======
->>>>>>> 7930d9c (probando)
   time = questions.length * 5;
   intervalID = setInterval(countdown, 1000);
   ///////////////////////////////////////////////////
@@ -217,14 +129,6 @@ function displayTime() {
 ///////////////////////////////////////////////////
 
 function showQuestion(question) {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 7af2741 (spa structure)
-=======
-
->>>>>>> c80826d (problema container height)
   notaElement.innerHTML = "Tu puntuación: " + nota;
   questionElement.innerText = question.question;
 
@@ -259,31 +163,10 @@ function showQuestion(question) {
         if (nota != 0) {
           nota = nota - 0.5;
           notaElement.innerHTML = "Tu puntuación: " + nota;
-<<<<<<< HEAD
-<<<<<<< HEAD
           time = time - 20;
         } else {
           notaElement.innerHTML = "Tu puntuación: " + nota;
           time = time - 20;
-=======
-          time = time + 5;
-        } else {
-          if (nota != 0) {
-            nota = nota - 0.5;
-            notaElement.innerHTML = "Tu puntuación: " + nota;
-            time = time - 20;
-            
-          } else {
-            notaElement.innerHTML = "Tu puntuación: " + nota;
-            time = time - 20;
-          }
->>>>>>> 7930d9c (probando)
-=======
-          time = time - 20;
-        } else {
-          notaElement.innerHTML = "Tu puntuación: " + nota;
-          time = time - 20;
->>>>>>> 7af2741 (spa structure)
         }
       }
 
@@ -293,36 +176,10 @@ function showQuestion(question) {
   });
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7af2741 (spa structure)
 function setNextQuestion() {
   resetState();
   showQuestion(questions[currentQuestionIndex]);
 }
-<<<<<<< HEAD
-=======
-  function resetState() {
-    nextButton.classList.replace("auxiliarButton","hide" ); //escondemos el botón next
-    while (answerButtonsElement.firstChild) {
-      //bucle que se ejecuta si answerButtonsElemetnos
-      //tiene un primer hijo
-      //borramos el primer hijo de answerButtonsElements
-      answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-    }
-  }
-  
-  
-  nextButton.addEventListener("click", () => {
-      currentQuestionIndex++;
-      setNextQuestion();
-    });
-    
-    startButton.addEventListener("click", startGame);
->>>>>>> 7930d9c (probando)
-=======
->>>>>>> 7af2741 (spa structure)
 
 function setStatusClass(element, correct) {
   //pinta la respuesta corre e incorrecta
@@ -330,7 +187,6 @@ function setStatusClass(element, correct) {
     element.classList.add("correct");
   } else {
     element.classList.add("wrong");
-<<<<<<< HEAD
   }
 }
 
@@ -352,14 +208,19 @@ function selectAnswer() {
     // mostRecentScore(); //GUARDA EL SCORE EN LOCALSTORAGE TODAS LAS PREGUNTAS
 
     endQuiz();
+    //Quita y muestra páginas//
   }
 }
 
 function endQuiz() {
   questionContainerElement.classList.add("hide");
+  nextButton.classList.replace("buttonAuxiliar", "hide");
   startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
   startButton.classList.replace("hide", "buttonStyle"); // volvemos a mostrar el botón start
-  nextButton.classList.replace("buttonAuxiliar", "hide");
+
+  //CAMBIA DE START/QUIZ A SAVE SCORE
+  showStartAndQuiz.classList.add("hide");
+  showSaveScoreBox.classList.remove("hide");
 
   username.classList.remove("hide");
   saveScoreBtn.classList.remove("hide");
@@ -383,73 +244,7 @@ nextButton.addEventListener("click", () => {
 
 startButton.addEventListener("click", loadingStartGame);
 
-//SaveUsers and Score
-saveScoreBtn.addEventListener("click", function (e) {
-  e.preventDefault();
-  const user = {
-    //USER está declarado tanto arriba como abajo gracias.
-    nombre: username.value,
-    score: nota,
-  };
-  {
-    users.push(user);
-    localStorage.setItem("users", JSON.stringify(users));
-
-    printInHTML();
-  }
-<<<<<<< HEAD
-=======
-  }
-}
-
-function selectAnswer() {
-  Array.from(answerButtonsElement.children).forEach((button) => {
-    //llamamos a la función y le pasamos los botons y el botón correcto
-    setStatusClass(button, button.dataset.correct);
-    button.disabled = true;
-  });
-  if (questions.length > currentQuestionIndex + 1) {
-    //si estamos en una pregunta que es menos que las preguuntas que quedan
-    //es decir si son 10 preguntas y estamos en la 7
-    //se muestra el boton siguiente porque aun quedan preguntas
-
-    nextButton.classList.replace("hide", "buttonAuxiliar");
-  } else {
-    //si no quedan preguntas porque hemos terminado (10/10)
-
-    // mostRecentScore(); //GUARDA EL SCORE EN LOCALSTORAGE TODAS LAS PREGUNTAS
-
-    endQuiz;
-  }
-}
-
-function endQuiz() {
-  questionContainerElement.classList.add("hide");
-  startButton.innerText = "Restart"; //cambiamos el texto del botón start por "restart"
-  startButton.classList.replace("hide", "buttonStyle"); // volvemos a mostrar el botón start
-  nextButton.classList.replace("buttonAuxiliar", "hide");
-
-  username.classList.remove("hide");
-  saveScoreBtn.classList.remove("hide");
-  finalScore.textContent = "Puntuación: " + nota;
-}
-
-function resetState() {
-  nextButton.classList.replace("buttonAuxiliar", "hide"); //escondemos el botón next
-  while (answerButtonsElement.firstChild) {
-    //bucle que se ejecuta si answerButtonsElemetnos
-    //tiene un primer hijo
-    //borramos el primer hijo de answerButtonsElements
-    answerButtonsElement.removeChild(answerButtonsElement.firstChild);
-  }
-}
-
-nextButton.addEventListener("click", () => {
-  currentQuestionIndex++;
-  setNextQuestion();
-});
-
-startButton.addEventListener("click", loadingStartGame);
+restartEndPageBtn.addEventListener("click", loadingStartGame);
 
 //SaveUsers and Score
 saveScoreBtn.addEventListener("click", function (e) {
@@ -464,8 +259,9 @@ saveScoreBtn.addEventListener("click", function (e) {
     localStorage.setItem("users", JSON.stringify(users));
 
     printInHTML();
+    showSaveScoreBox.classList.add("hide");
+    showEndPage.classList.remove("hide");
   }
->>>>>>> 7af2741 (spa structure)
 });
 
 const users = JSON.parse(localStorage.getItem("users")) || []; //Si existe algo en el LocalStorage creará un array nuevo y mantendrá el anterior
@@ -506,28 +302,3 @@ function animateValue(loadingNumber, start, end, duration) {
 }
 
 const loadingNumber = document.getElementById("valueLoading");
-
-
-
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-////////// ANIMATION START /////////
-=======
-    
-  printInHTML();
-  
-      //   const users = JSON.parse(localStorage.getItem("users")) || []; //Si existe algo en el LocalStorage creará un array nuevo y mantendrá el anterior
-        
-      //   //PrintUSers
-        
-      //   // const  highScoreList = document.getElementById("highscoresList")
-      //   // const highScores = JSON.parse(localStorage.getItem("users")) || [];
-        
->>>>>>> 7930d9c (probando)
-=======
-////////// ANIMATION START /////////
->>>>>>> 7af2741 (spa structure)
-=======
-////////// ANIMATION START /////////
->>>>>>> c80826d (problema container height)
