@@ -19,7 +19,7 @@ La web está diseñada en estilo Simple Page Aplication (SPA), dividiéndose en 
   Al entrar en la página se puede ver un spinner y a los segundos aparece la pantalla inicial.
   <br>
   
-  ![gif](https://github.com/sergiokano/Web_Personal/blob/main/gif/2.gif)
+
 
 ![gif](https://github.com/Sif03/Proyecto---Quiz/blob/master/ASSETS/1.-loading.gif)
   
@@ -32,15 +32,17 @@ La web está diseñada en estilo Simple Page Aplication (SPA), dividiéndose en 
   <br>
   El quiz puede acabar si el contador llega a 0 o si las 10 preguntas se acaban.
   <br>
+  
 ![gif](https://github.com/Sif03/Proyecto---Quiz/blob/master/ASSETS/3-preguntas.gif)
-  <br>
+
+ <br>
   
-  ## Redes Sociales 📖
+  ## Redes Sociales 👨‍💻️
   
-Sergio Cano --- <a href = "mailto:sergiocano.design@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+Sergio Cano  ➡  <a href = "mailto:sergiocano.design@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
     <a href="https://www.linkedin.com/in/sergio-cano-s%C3%A1nchez-021b75178/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
   <br>  <br> 
-Sif Et tabaa --- <a href = "mailto:sifbusinesswork@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
+Sif Et tabaa  ➡  <a href = "mailto:sifbusinesswork@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
     <a href="https://www.linkedin.com/in/sif-et-tabaa-b7747a253/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 
   <br>
@@ -50,4 +52,4 @@ Sif Et tabaa --- <a href = "mailto:sifbusinesswork@gmail.com"><img src="https://
   
 Este proyecto está bajo la Licencia de Sergio Cano y Sif Et tabaa.
 ---
-⌨️ hecho por [sergiokano](https://github.com/sergiokano) y [sif](https://github.com/Sif03) 😊
+👨‍💻️ hecho por [sergiokano](https://github.com/sergiokano) y [sif](https://github.com/Sif03) 😊
