@@ -18,7 +18,9 @@ La web está diseñada en estilo Simple Page Aplication (SPA), dividiéndose en 
 
 <br>
 
-
+![1.loading gif](https://github.com/Sif03/Proyecto---Quiz/blob/master/ASSETS/1.-loading.gif)
+![2.start loading gif](https://github.com/Sif03/Proyecto---Quiz/blob/master/ASSETS/2.start-loading.gif)
+![3.preguntas gif](https://github.com/Sif03/Proyecto---Quiz/blob/master/ASSETS/3-preguntas.gif)
 
 ---
 ⌨️ hecho por [sergiokano](https://github.com/sergiokano) y [sif](https://github.com/Sif03) 😊
