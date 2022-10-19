@@ -37,6 +37,19 @@ La web está diseñada en estilo Simple Page Aplication (SPA), dividiéndose en 
 
  <br>
   
+  ## Funcionalidades 
+  
+  <br>
+  
+- Manipulación dinámica del DOM
+- Crear una página SPA para las preguntas
+- Uso de ES6
+- Asincronía. Usada para la API mediante la función AXIOS.
+- APIs HTML5: Uso de Local storage para el ranking
+- Estética añadida sin librerías, únicamente CSS
+  
+  <br>
+  
   ## Redes Sociales 👨‍💻️
   
 Sergio Cano  ➡      <a href = "mailto:sergiocano.design@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
