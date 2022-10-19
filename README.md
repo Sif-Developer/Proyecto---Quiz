@@ -18,11 +18,17 @@ La web está diseñada en estilo Simple Page Aplication (SPA), dividiéndose en 
   <br>
   Al entrar en la página se puede ver un spinner y a los segundos aparece la pantalla inicial.
   <br>
+  
+  ![gif](https://github.com/sergiokano/Web_Personal/blob/main/gif/2.gif)
+
 ![gif](https://github.com/Sif03/Proyecto---Quiz/blob/master/ASSETS/1.-loading.gif)
+  
   <br>
   Una vez pulsado el botón start aparecen las preguntas y las respuestas. Además, el contador empieza a bajar.
   <br>
+  
 ![gif](https://github.com/Sif03/Proyecto---Quiz/blob/master/ASSETS/2.start-loading.gif)
+ 
   <br>
   El quiz puede acabar si el contador llega a 0 o si las 10 preguntas se acaban.
   <br>
@@ -33,7 +39,7 @@ La web está diseñada en estilo Simple Page Aplication (SPA), dividiéndose en 
   
 Sergio Cano --- <a href = "mailto:sergiocano.design@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
     <a href="https://www.linkedin.com/in/sergio-cano-s%C3%A1nchez-021b75178/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
-  <br>
+  <br>  <br> 
 Sif Et tabaa --- <a href = "mailto:sifbusinesswork@gmail.com"><img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
     <a href="https://www.linkedin.com/in/sif-et-tabaa-b7747a253/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
 
